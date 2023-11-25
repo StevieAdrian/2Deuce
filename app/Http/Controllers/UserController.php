@@ -7,6 +7,12 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+
+    public function login()
+    {
+        return view('login');
+    }
+
     public function register()
     {
         return view('register');
@@ -18,7 +24,8 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password,
-
         ]);
+
+        return redirect()->route('register');
     }
 }
