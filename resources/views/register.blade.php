@@ -43,6 +43,10 @@
                                 Already have an account?
                                 <a href="{{ route('loginPage') }}">Login</a>
                             </div>
+
+                            <div>
+                                tes
+                            </div>
                         </div>
                     </form>
                 </div>
