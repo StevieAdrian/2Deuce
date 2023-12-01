@@ -14,13 +14,11 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::post('register', [UserController::class, 'registerProcess']) ->name('register');
+Route::get('/', [UserController::class, 'register'])->name('register')->middleware('guest');
+Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/home', [UserController::class, 'home'])->name('home')->middleware('auth');
 
-Route::get('/', function() {
-    return view('login');
-}) ->name('loginPage');
+Route::post('/register', [UserController::class, 'registerProcess'])->name('registerProcess');
+Route::post('/login', [UserController::class, 'loginProcess'])->name('loginProcess');
+Route::get('/logout', [UserController::class, 'logout'])->name('logoutProcess');
 
-Route::get('register', function () {
-    // return view('welcome');
-    return view('register');
-}) ->name('registerPage');
