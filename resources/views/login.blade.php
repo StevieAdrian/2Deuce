@@ -18,7 +18,9 @@
         <div class="login">
             <img src="assets/login-bg.png" alt="login image" class="login__img">
 
-            <form action="" class="login__form">
+            <form action="{{ route('loginProcess') }}" class="login__form" method="POST">
+            @csrf
+            @method('POST')
             <h1 class="login__title">Login</h1>
 
             <div class="login__content">
@@ -26,7 +28,7 @@
                     <i class="ri-user-3-line login__icon"></i>
 
                     <div class="login__box-input">
-                        <input type="email" required class="login__input" id="login-email" placeholder=" ">
+                        <input name="email" type="email" required class="login__input" id="login-email" placeholder=" ">
                         <label for="login-email" class="login__label">Email</label>
                     </div>
                 </div>
@@ -35,7 +37,7 @@
                     <i class="ri-lock-2-line login__icon"></i>
 
                     <div class="login__box-input">
-                        <input type="password" required class="login__input" id="login-pass" placeholder=" ">
+                        <input name="password" type="password" required class="login__input" id="login-pass" placeholder=" ">
                         <label for="login-pass" class="login__label">Password</label>
                         <i class="ri-eye-off-line login__eye" id="login-eye"></i>
                     </div>
@@ -55,7 +57,7 @@
 
             <p class="login__register">
                 Don't have an account?
-                <a href="{{ route('registerPage') }}">Register</a>
+                <a href="{{ route('register') }}">Register</a>
             </p>
             </form>
         </div>

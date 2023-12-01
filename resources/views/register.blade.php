@@ -20,7 +20,7 @@
                             {{ Session::get('success') }}
                         </div>
                     @endif
-                    <form action="{{ route('register') }}" method="POST">
+                    <form action="{{ route('registerProcess') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
@@ -41,7 +41,7 @@
 
                             <div class="login__register">
                                 Already have an account?
-                                <a href="{{ route('loginPage') }}">Login</a>
+                                <a href="{{ route('login') }}">Login</a>
                             </div>
 
                             <div>

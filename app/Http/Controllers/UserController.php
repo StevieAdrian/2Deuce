@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -18,13 +19,43 @@ class UserController extends Controller
         return view('register');
     }
 
+    public function home()
+    {
+        return view('home');
+    }
+
     public function registerProcess(Request $request)
     {
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => bcrypt($request->password),
         ]);
+
+        return redirect()->route('register');
+    }
+
+    public function loginProcess(Request $request){
+
+        if(Auth::attempt(
+            ['email' => $request->email,
+            'password' => $request->password])
+        ){
+            $request->session()->regenerate();
+            // dd($request);
+            // var_dump($request);
+            return redirect()->route('home');
+        }
+
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
 
         return redirect()->route('register');
     }
