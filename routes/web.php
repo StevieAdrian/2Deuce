@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FilmsController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,6 @@ Route::post('/register', [UserController::class, 'registerProcess'])->name('regi
 Route::post('/login', [UserController::class, 'loginProcess'])->name('loginProcess');
 Route::get('/logout', [UserController::class, 'logout'])->name('logoutProcess');
 
+Route::get('/films', [FilmsController::class, 'index'])->name('films.index');
+Route::get('/films/create', [FilmsController::class, 'create'])->name('films.create');
+Route::post('/films/store', [FilmsController::class,'store'])->name('films.store');
