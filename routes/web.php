@@ -32,3 +32,6 @@ Route::get('/dashboard', [MovieController::class, 'dashboard'])->name('dashboard
 Route::get('/films', [FilmsController::class, 'index'])->name('films.index');
 Route::get('/films/create', [FilmsController::class, 'create'])->name('films.create');
 Route::post('/films/store', [FilmsController::class,'store'])->name('films.store');
+Route::get('/films/{id}/edit', [FilmsController::class, 'edit']);
+Route::put('/films/{id}/update', [FilmsController::class, 'update']);
+Route::get('/films/{id}/delete', [FilmsController::class, 'destroy']);

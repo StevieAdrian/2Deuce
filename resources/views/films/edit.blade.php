@@ -30,56 +30,57 @@
 
     <div class="container">
         <div>
-            <h1>Create Film</h1>
             <div class="row">
                 <div class="col-sm-12">
-                    <form method="POST" action="/films/store" enctype="multipart/form-data">
+                    <h3 class="text-muted">Film Edit #{{ $films->FilmName }}</h3>
+                    <form method="POST" action="/films/{{ $films->id }}/update" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                         <div class="mb-3">
                             <label for="FilmName" class="form-label">Film Name</label>
-                            <input type="text" class="form-control" id="FilmName" name="FilmName" value="{{ old('FilmName') }}">
+                            <input type="text" class="form-control" id="FilmName" name="FilmName" value="{{ old('FilmName',$films->FilmName) }}">
                             @if($errors->has('FilmName'))   
                                 <span class="text-danger">{{ $errors->first('FilmName') }}</span>
                             @endif
                         </div>
                         <div class="mb-3">
                             <label for="FilmDirector" class="form-label">Film Director</label>
-                            <input type="text" class="form-control" id="FilmDirector" name="FilmDirector" value="{{ old('FilmDirector') }}">
+                            <input type="text" class="form-control" id="FilmDirector" name="FilmDirector" value="{{ old('FilmDirector',$films->FilmDirector) }}">
                             @if($errors->has('FilmDirector'))   
                                 <span class="text-danger">{{ $errors->first('FilmDirector') }}</span>
                             @endif
                         </div>
                         <div class="mb-3">
                             <label for="MaturityRating" class="form-label">Maturity Rating</label>
-                            <input type="text" class="form-control" id="MaturityRating" name="MaturityRating" value="{{ old('MaturityRating') }}">
-                            @if($errors->has('MaturityRatingId'))   
+                            <input type="text" class="form-control" id="MaturityRating" name="MaturityRating" value="{{ old('MaturityRating',$films->MaturityRatingId) }}">
+                            @if($errors->has('MaturityRating'))   
                                 <span class="text-danger">{{ $errors->first('MaturityRating') }}</span>
                             @endif
                         </div>
                         <div class="mb-3">
                             <label for="FilmDuration" class="form-label">Film Duration</label>
-                            <input type="text" class="form-control" id="FilmDuration" name="FilmDuration" value="{{ old('FilmDuration') }}">
+                            <input type="text" class="form-control" id="FilmDuration" name="FilmDuration" value="{{ old('FilmDuration',$films->FilmDuration) }}">
                             @if($errors->has('FilmDuration'))   
                                 <span class="text-danger">{{ $errors->first('FilmDuration') }}</span>
                             @endif
                         </div>
                         <div class="mb-3">
                             <label for="FilmStatusId" class="form-label">Film Status Id</label>
-                            <input type="text" class="form-control" id="FilmStatusId" name="FilmStatusId" value="{{ old('FilmStatusId') }}">
-                            @if($errors->has('FilmStatusID'))   
+                            <input type="text" class="form-control" id="FilmStatusId" name="FilmStatusId" value="{{ old('FilmStatusId',$films->FilmStatusID) }}">
+                            @if($errors->has('FilmStatusId'))   
                                 <span class="text-danger">{{ $errors->first('FilmStatusId') }}</span>
                             @endif
                         </div>
                         <div class="mb-3">
                             <label for="FilmSynopsis" class="form-label">Film Synopsis</label>
-                            <textarea class="form-control" id="FilmSynopsis" rows="4" name="FilmSynopsis" value="{{ old('FilmSynopsis') }}"></textarea>
+                            <textarea class="form-control" id="FilmSynopsis" rows="4" name="FilmSynopsis">{{ old('FilmSynopsis',$films->FilmSynopsis) }}</textarea>
                             @if($errors->has('FilmSynopsis'))   
                                 <span class="text-danger">{{ $errors->first('FilmSynopsis') }}</span>
                             @endif
                         </div>
                         <div class="mb-3">
                             <label for="FilmWriter" class="form-label">Film Writer</label>
-                            <input type="text" class="form-control" id="FilmWriter" name="FilmWriter" value="{{ old('FilmWriter') }}">
+                            <input type="text" class="form-control" id="FilmWriter" name="FilmWriter" value="{{ old('FilmWriter',$films->FilmWriter) }}">
                             @if($errors->has('FilmWriter'))   
                                 <span class="text-danger">{{ $errors->first('FilmWriter') }}</span>
                             @endif
