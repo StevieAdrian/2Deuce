@@ -1,0 +1,138 @@
+/* *{
+    background-color: ;
+} */
+
+.logo-button {
+    width: 490px;
+    height: 145px;
+}
+
+.home-button {
+    display: flex;
+    width: 75px;
+    height: 17px;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking-button {
+    display: flex;
+    width: 118px;
+    height: 17px;
+    justify-content: center;
+    align-items: center;
+}
+
+.nowshowing-button {
+    display: flex;
+    width: 196px;
+    height: 17px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.upcoming-button {
+    display: flex;
+    width: 141px;
+    height: 17px;
+    padding-right: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-70 {
+    width: 70%;
+}
+    
+.carousel-inner img {
+    width: 50%; 
+    margin: 0 auto; 
+}
+
+.footer-button{
+    color: rgba(224, 224, 224, 0.65);
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.2px;
+}
+
+.follow-button{
+    color:#E0E0E0;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.2px;
+}
+
+.footer-font {
+    color: #E0E0E0;
+    font-family: Modern Antiqua;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.footer-p {
+    color: rgba(255, 255, 255, 0.60);
+    padding-bottom: both;
+    text-indent: cap;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.7px;
+}
+
+.img-size {
+    width: 20px;
+    height: 20px;
+}
+
+.color-maroon {
+    color: maroon;
+}
+
+.color-grey {
+    color: rgba(255, 255, 255, 0.60);
+}
+
+.deuce-size {
+    width: 47.069px;
+    height: 70px;
+}
+
+
+.custom-border {
+    border-width: 2px !important; 
+    border-color: #470000 !important;
+    width: 300px;
+    height: 400px;;
+    background-color: #1B1919;
+}
+
+.payment-font{
+    color: #E0E0E0;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 40;
+    line-height: normal;
+}
+
+.payment-font1{
+    color: #E0E0E0;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 40;
+    line-height: normal;
+}
