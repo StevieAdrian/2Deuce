@@ -52,7 +52,7 @@
                         <div class="mb-3">
                             <label for="MaturityRating" class="form-label">Maturity Rating</label>
                             <input type="text" class="form-control" id="MaturityRating" name="MaturityRating" value="{{ old('MaturityRating') }}">
-                            @if($errors->has('MaturityRatingId'))   
+                            @if($errors->has('MaturityRating'))   
                                 <span class="text-danger">{{ $errors->first('MaturityRating') }}</span>
                             @endif
                         </div>
@@ -66,7 +66,7 @@
                         <div class="mb-3">
                             <label for="FilmStatusId" class="form-label">Film Status Id</label>
                             <input type="text" class="form-control" id="FilmStatusId" name="FilmStatusId" value="{{ old('FilmStatusId') }}">
-                            @if($errors->has('FilmStatusID'))   
+                            @if($errors->has('FilmStatusId'))   
                                 <span class="text-danger">{{ $errors->first('FilmStatusId') }}</span>
                             @endif
                         </div>
