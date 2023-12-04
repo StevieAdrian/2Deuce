@@ -40,3 +40,20 @@ Route::get('/theaters/createTheaters', [TheatersController::class, 'create'])->n
 Route::post('/theaters/store', [TheatersController::class,'store'])->name('theaters.store');
 
 Route::get('/seats', [TheaterSeatController::class, 'seats'])->name('seats.theaterSeat');
+Route::get('/films/{id}/edit', [FilmsController::class, 'edit']);
+Route::put('/films/{id}/update', [FilmsController::class, 'update']);
+Route::get('/films/{id}/delete', [FilmsController::class, 'destroy']);
+
+Route::get('/MaturityRating', [MaturityRatingController::class,'index'])->name('maturity.index');
+Route::get('/MaturityRating/create', [MaturityRatingController::class,'create'])->name('maturity.create');
+Route::post('/MaturityRating/store', [MaturityRatingController::class,'store'])->name('maturity.store');
+Route::get('/MaturityRating/{id}/edit', [MaturityRatingController::class,'edit']);
+Route::put('/MaturityRating/{id}/update', [MaturityRatingController::class,'update']);
+Route::get('/MaturityRating/{id}/delete', [MaturityRatingController::class,'destroy']);
+
+Route::get('/FilmStatus', [FilmStatusController::class,'index'])->name('filmstatus.index');
+Route::get('/FilmStatus/create', [FilmStatusController::class,'create'])->name('filmstatus.create');
+Route::post('/FilmStatus/store', [FilmStatusController::class,'store'])->name('filmstatus.store');
+Route::get('/FilmStatus/{id}/edit', [FilmStatusController::class,'edit']);
+Route::put('/FilmStatus/{id}/update', [FilmStatusController::class,'update']);
+Route::get('/FilmStatus/{id}/delete', [FilmStatusController::class,'destroy']);

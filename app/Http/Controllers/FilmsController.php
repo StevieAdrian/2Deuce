@@ -12,7 +12,9 @@ class FilmsController extends Controller
      */
     public function index()
     {
-        return view('films.index'); 
+        return view('films.index',[
+            'films' => Films::get()
+        ]);
     }
 
     /**
@@ -28,18 +30,16 @@ class FilmsController extends Controller
      */
     public function store(Request $request)
     {
-
-        // $request->validate([
-        //     'FilmName' => 'required',
-        //     'FilmDirector' =>'required',
-        //     'MaturityRatingId' =>'required',
-        //     'FilmDuration' =>'required',
-        //     'FilmStatusID' =>'required',
-        //     'FilmSynopsis' =>'required',
-        //     'FilmWriter' =>'required',
-        //     'FilmPoster' =>'required|image|mimes:jpeg,png,jpg,gif|max:10000',
-        // ]);
-
+        $request->validate([
+            'FilmName' => 'required|string',
+            'FilmDirector' => 'required|string',
+            'MaturityRating' => 'required|numeric',
+            'FilmDuration' => 'required|numeric',
+            'FilmStatusId' => 'required|numeric',
+            'FilmSynopsis' => 'required|string',
+            'FilmWriter' => 'required|string',
+            'FilmPoster' => 'required|image|mimes:jpeg,png,jpg,gif|max:10000',
+        ]);
 
         //Upload Image
         $imageName = time().'.' .$request->FilmPoster->extension();
@@ -56,7 +56,7 @@ class FilmsController extends Controller
         $ms_films->FilmWriter = $request->FilmWriter;
         $ms_films->save();
 
-        return back()->withSucess('New Film Added');
+        return back()->withSuccess('New Film Added');
     }
 
     /**
@@ -72,7 +72,9 @@ class FilmsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $ms_films = Films::where('id',$id)->first();
+
+        return view('films.edit', ['films' => $ms_films]);
     }
 
     /**
@@ -80,7 +82,35 @@ class FilmsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'FilmName' => 'required|string',
+            'FilmDirector' => 'required|string',
+            'MaturityRating' => 'required|numeric',
+            'FilmDuration' => 'required|numeric',
+            'FilmStatusId' => 'required|numeric',
+            'FilmSynopsis' => 'required|string',
+            'FilmWriter' => 'required|string',
+            'FilmPoster' => 'required|image|mimes:jpeg,png,jpg,gif|max:10000',
+        ]);
+        $ms_films = Films::where('id',$id)->first();
+
+        if(isset($request->FilmPoster))
+        {
+            $imageName = time().'.' .$request->FilmPoster->extension();
+            $request->FilmPoster->move(public_path('poster'), $imageName);
+            $ms_films->FilmPoster = $imageName;
+        }
+        
+        $ms_films->FilmName = $request->FilmName;
+        $ms_films->FilmDirector=$request->FilmDirector;
+        $ms_films->MaturityRatingId = $request->MaturityRating;
+        $ms_films->FilmDuration = $request->FilmDuration;
+        $ms_films->FilmStatusID = $request->FilmStatusId;
+        $ms_films->FilmSynopsis = $request->FilmSynopsis;
+        $ms_films->FilmWriter = $request->FilmWriter;
+        $ms_films->save();
+
+        return back()->withSuccess('New Film Updated Success');
     }
 
     /**
@@ -88,6 +118,8 @@ class FilmsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       $ms_films=Films::where('id', $id)->first();
+       $ms_films->delete();
+       return back()->withSuccess('Film Delete Success');
     }
 }
