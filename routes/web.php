@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -22,3 +23,6 @@ Route::post('/register', [UserController::class, 'registerProcess'])->name('regi
 Route::post('/login', [UserController::class, 'loginProcess'])->name('loginProcess');
 Route::get('/logout', [UserController::class, 'logout'])->name('logoutProcess');
 
+Route::get('/movie', [MovieController::class, 'movie'])->name('movie');
+Route::get('/payment', [MovieController::class, 'payment'])->name('payment');
+Route::get('/dashboard', [MovieController::class, 'dashboard'])->name('dashboard');

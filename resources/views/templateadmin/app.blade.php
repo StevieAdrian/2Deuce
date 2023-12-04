@@ -1,0 +1,5 @@
+@include('templateadmin.doc')
+@include('templateadmin.headeradmin')
+@yield('content')
+@include('templateadmin.footer')
+@include('templateadmin.closer')
