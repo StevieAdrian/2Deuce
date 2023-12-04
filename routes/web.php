@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FilmsController; 
@@ -22,6 +23,11 @@ Route::get('/home', [UserController::class, 'home'])->name('home')->middleware('
 Route::post('/register', [UserController::class, 'registerProcess'])->name('registerProcess');
 Route::post('/login', [UserController::class, 'loginProcess'])->name('loginProcess');
 Route::get('/logout', [UserController::class, 'logout'])->name('logoutProcess');
+
+Route::get('/movie', [MovieController::class,  'movie'])->name('movie');
+Route::get('/payment', [MovieController::class, 'payment'])->name('payment');
+Route::get('/dashboard', [MovieController::class, 'dashboard'])->name('dashboard');
+
 
 Route::get('/films', [FilmsController::class, 'index'])->name('films.index');
 Route::get('/films/create', [FilmsController::class, 'create'])->name('films.create');
