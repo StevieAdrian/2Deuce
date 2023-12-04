@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,100;9..40,400;9..40,700&family=Nunito:wght@600&display=swap');
+
+*{
+    margin: 0;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1B1919;
+    color: #fff;
+    height: 100vh;
+}
+
+.row{
+    display: flex;
+}
+
+.seat{
+    background-color: #B1B1B1;
+    height: 26px;
+    width: 30px;
+    margin: 3px;
+    border-radius: 4px;
+    font-size: 15px;
+    color:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+}
+
+.seat:hover{
+    transform: scale(1.2);
+}
+
+.seat.select{
+    background-color: #D58936;
+}
+
+.seat:nth-of-type(3){
+    margin-right: 18px;
+}
+
+.seat:nth-last-of-type(3){
+    margin-left: 18px;
+}
+
+.lastSeat{
+    background-color: #1B1919;
+    height: 26px;
+    width: 30px;
+    margin: 3px;
+    font-size: 50px;
+    border-radius: 4px;
+}
+
+.screen{
+    margin-top: 70px;
+    background-color: white;
+    /* padding: 7px; */
+    width: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+}

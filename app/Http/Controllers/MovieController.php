@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Films;
+use App\Models\Movie;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
 {
     public function movie()
     {
-        return view('movie.main');
+        $movies = Films::all();
+        return view('movie.main', compact('movies'));
     }
 
     public function payment()
@@ -19,5 +22,11 @@ class MovieController extends Controller
     public function dashboard()
     {
         return view('movie.dashboard');
+    }
+
+    public function details($id) {
+        $movies = Films::find($id);
+        return view('movie.details', ['movie' => $movies]);
+        // return view('movie.details', compact('movies'));
     }
 }
