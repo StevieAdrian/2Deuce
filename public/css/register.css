@@ -1,0 +1,9 @@
+html,body{
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+
+.bg{
+    background-color: #1B1919;
+}

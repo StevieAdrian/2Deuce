@@ -56,20 +56,22 @@
         </div>
         <div style="margin-left: 20px;"> NOW SHOWING </div>
     </div>
+    @foreach($movies as $movie)
     <div class="d-flex justify-content-center pt-5 pb-5" style="background-color: #1B1919">
-        <a href="#" class="text-center text-white"
+        <a href="{{route('details', ['id' => $movie->id])}}" class="text-center text-white"
             style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
             <div style="margin-bottom: 10px;">
-                <img src="assets/pos1.png" alt="pos1" class="img-fluid">
-                <div class="mt-3">The Tunnel to Summer, The Exit of Goodbye</div>
+                <img src="{{asset('poster/' .$movie->FilmPoster)}}" alt="pos1" class="img-fluid" style="width:auto ; height:25rem">
+                <div class="mt-3">{{$movie->FilmName}}</div>
             </div>
             <div style="display: flex; align-items: center;">
                 <img src="assets/timelogo.png" alt="timelogo">
-                <div class="ml-2" style="margin-left: 5px;">82m</div>
+                <div class="ml-2" style="margin-left: 5px;">{{$movie->FilmDuration}} m</div>
                 <img style="width: 50px; height:30px" class="ps-2" src="assets/r13.jpg" alt="r13">
             </div>
         </a>
     </div>
+    @endforeach
     <div class="d-flex justify-content-start align-items-center ps-5"
         style="font-size: 48px; color:white; background-color: #1B1919; height: 100;">
         <div style="width: 30px; background-color: #370000; height: 110px; margin-left:130px">
