@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Films;
 
 class FilmsController extends Controller
 {
@@ -27,7 +28,35 @@ class FilmsController extends Controller
      */
     public function store(Request $request)
     {
-        $imageName = time().'.' .$request->image->extension();
+
+        // $request->validate([
+        //     'FilmName' => 'required',
+        //     'FilmDirector' =>'required',
+        //     'MaturityRatingId' =>'required',
+        //     'FilmDuration' =>'required',
+        //     'FilmStatusID' =>'required',
+        //     'FilmSynopsis' =>'required',
+        //     'FilmWriter' =>'required',
+        //     'FilmPoster' =>'required|image|mimes:jpeg,png,jpg,gif|max:10000',
+        // ]);
+
+
+        //Upload Image
+        $imageName = time().'.' .$request->FilmPoster->extension();
+        $request->FilmPoster->move(public_path('poster'), $imageName);
+
+        $ms_films = new Films();
+        $ms_films->FilmPoster = $imageName;
+        $ms_films->FilmName = $request->FilmName;
+        $ms_films->FilmDirector=$request->FilmDirector;
+        $ms_films->MaturityRatingId = $request->MaturityRating;
+        $ms_films->FilmDuration = $request->FilmDuration;
+        $ms_films->FilmStatusID = $request->FilmStatusId;
+        $ms_films->FilmSynopsis = $request->FilmSynopsis;
+        $ms_films->FilmWriter = $request->FilmWriter;
+        $ms_films->save();
+
+        return back()->withSucess('New Film Added');
     }
 
     /**
