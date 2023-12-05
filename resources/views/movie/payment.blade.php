@@ -1,5 +1,6 @@
 @extends('template.app')
 @section('content')
+
     <div class="container pb-2">
         <div class="row justify-content-center">
             <div class="col-md-6 d-flex justify-content-center align-items-center">

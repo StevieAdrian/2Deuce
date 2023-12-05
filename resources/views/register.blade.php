@@ -1,57 +1,61 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel 10 Custom Login and Registration - Register Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-</head>
-<body>
-<div class="row justify-content-center mt-5">
-        <div class="col-lg-4">
-            <div class="card">
-                <div class="card-header">
-                    <h1 class="card-title">Register</h1>
-                </div>
-                <div class="card-body">
-                    @if(Session::has('success'))
-                        <div class="alert alert-success" role="alert">
-                            {{ Session::get('success') }}
-                        </div>
-                    @endif
-                    <form action="{{ route('registerProcess') }}" method="POST">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email address</label>
-                            <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" name="password" class="form-control" id="password" required>
-                        </div>
-                        <div class="mb-3">
-                            <div class="d-grid">
-                                <button class="btn btn-primary">Register</button>
-                            </div>
+@extends('template.app')
+@section('content')
+    <!--=============== BOOTSTRAP ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-                            <div class="login__register">
-                                Already have an account?
-                                <a href="{{ route('login') }}">Login</a>
-                            </div>
 
-                            <div>
-                                tes
-                            </div>
-                        </div>
-                    </form>
-                </div>
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="{{asset('css/register.css')}}">
+    <!-- <link rel="stylesheet" href="resources/css/styles.css"> -->
+    <!-- <link rel="stylesheet" href="{{ asset('resources/css/styles.css') }}"> -->
+
+    <div class="row justify-content-center mt-5">
+        @if(Session::has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ Session::get('success') }}
             </div>
+        @endif
+
+        <div class="register">
+            <form class="register__form" action="{{ route('registerProcess') }}" method="POST">
+                @csrf
+                <h1 class="register__title">Register</h1>
+                <h2 class="register__subtitle">Welcome to Deuce! Let’s get started.</h2>
+
+                <div class="register__content">
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Username</label>
+                        <input type="text" class="login__field form-control" id="formGroupExampleInput" placeholder="Enter your username here">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email here">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="inputPassword5" class="form-label">Password</label>
+                        <input type="password" id="inputPassword5" class="login__field form-control" aria-describedby="passwordHelpBlock" placeholder="Enter your password here">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="inputPassword5" class="form-label">Confirm Password</label>
+                        <input type="password" id="inputPassword5" class="login__field form-control" aria-describedby="passwordHelpBlock" placeholder="Enter your password here">
+                    </div>
+                </div>
+
+                <div class="register__button">
+                    <button type="submit" class="register_button_content btn btn-outline-warning">SUBMIT</button>
+                </div>
+            </form>
         </div>
     </div>
-</body>
-</html>
+
+    <!--=============== BOOTSTRAP JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+@endsection
