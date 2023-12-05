@@ -1,4 +1,46 @@
-<!DOCTYPE html>
+#include<stdio.h>
+#include<string.h>
+
+struct Data{
+	char name[100] = {};
+	char nim[11] = {};
+};
+
+int main(){
+	FILE *fdt = fopen("testdata.in","r");
+	
+	int n = 0;
+	fscanf(fdt, "%d", &n);
+
+	struct Data student[1001] = {};
+	struct Data *spointer[1001] = {};
+
+	for(int i=0; i<n; i++){
+		fscanf(fdt, "%s %[^\n]\n", student[i].nim, student[i].name);
+		spointer[i] = &student[i];
+	}
+	int min_idx;
+	for(int i=0; i<n; i++){
+		min_idx = i;
+		for(int j=i+1; j<n; j++){
+			if(strcmp((*spointer[j]).nim, (*spointer[min_idx]).nim) < 0){
+				min_idx = j;
+			}
+		}
+		
+		if(min_idx != i){
+			struct Data *temp = spointer[i];
+			spointer[i] = spointer[min_idx];
+			spointer[min_idx] = temp;
+		}
+		
+		printf("%s %s\n", (*spointer[i]).nim, (*spointer[i]).name);	
+	}
+	
+	fclose(fdt);
+	return 0;
+}
+v vv                   <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
