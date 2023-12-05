@@ -136,3 +136,19 @@
     font-weight: 40;
     line-height: normal;
 }
+
+.admin-nav{
+    font-size: 14px;
+}
+
+.full-black {
+    background-color: #1B1919;
+    color: white; 
+    width: 100%;
+    height: 100vh; 
+    padding: 20px; 
+}
+
+.admin-dash{
+    font-size: 40px;
+}
