@@ -20,7 +20,7 @@
         @endif
 
         <div class="register">
-            <form class="register__form" action="{{ route('registerProcess') }}" method="POST">
+            <form class="register__form" >
                 @csrf
                 <h1 class="register__title">Register</h1>
                 <h2 class="register__subtitle">Welcome to Deuce! Let’s get started.</h2>
