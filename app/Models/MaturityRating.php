@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class MaturityRating extends Model
 {
     use HasFactory;
+
+    protected $table ='ms_maturityrating';
+
+    protected $fillable = ['MaturityRating'];
 }

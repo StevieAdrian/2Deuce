@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\MaturityRating;
 
 class MaturityRatingController extends Controller
 {
@@ -11,7 +12,9 @@ class MaturityRatingController extends Controller
      */
     public function index()
     {
-        //
+        return view('maturity.index',[
+            'maturity' => MaturityRating::get()
+        ]);
     }
 
     /**
@@ -19,7 +22,7 @@ class MaturityRatingController extends Controller
      */
     public function create()
     {
-        //
+        return view('maturity.create');
     }
 
     /**
@@ -27,7 +30,15 @@ class MaturityRatingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'MaturityRating' => 'required|string',
+        ]);
+
+        $ms_maturityrating = new MaturityRating();
+        $ms_maturityrating->MaturityRating = $request->MaturityRating;
+        $ms_maturityrating->save();
+
+        return back()->withSuccess('New Maturity Rating created successfully');
     }
 
     /**
@@ -43,7 +54,9 @@ class MaturityRatingController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $ms_maturityrating = MaturityRating::where('id',$id)->first();
+
+        return view('maturity.edit', ['maturity' => $ms_maturityrating]);
     }
 
     /**
@@ -51,7 +64,16 @@ class MaturityRatingController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'MaturityRating' => 'required|string',
+        ]);
+        $ms_maturityrating = MaturityRating::where('id',$id)->first();
+        
+        $ms_maturityrating->MaturityRating = $request->MaturityRating;
+
+        $ms_maturityrating->save();
+
+        return back()->withSuccess('New Maturity Rating updated successfully');
     }
 
     /**
@@ -59,6 +81,8 @@ class MaturityRatingController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       $ms_maturityrating=MaturityRating::where('id', $id)->first();
+       $ms_maturityrating->delete();
+       return back()->withSuccess('Maturity Rating Delete Success');
     }
 }

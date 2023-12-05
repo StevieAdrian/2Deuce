@@ -3,7 +3,9 @@
 use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\FilmsController; 
+use App\Http\Controllers\FilmsController;
+use App\Http\Controllers\FilmStatusController;
+use App\Http\Controllers\MaturityRatingController; 
 
 /*
 |--------------------------------------------------------------------------
