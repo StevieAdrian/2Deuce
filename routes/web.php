@@ -11,6 +11,8 @@ use App\Http\Controllers\TheaterSeatController;
 use App\Http\Controllers\FilmStatusController;
 use App\Http\Controllers\MaturityRatingController; 
 
+use App\Http\Controllers\BookingStatusController; 
+
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +64,10 @@ Route::post('/FilmStatus/store', [FilmStatusController::class,'store'])->name('f
 Route::get('/FilmStatus/{id}/edit', [FilmStatusController::class,'edit']);
 Route::put('/FilmStatus/{id}/update', [FilmStatusController::class,'update']);
 Route::get('/FilmStatus/{id}/delete', [FilmStatusController::class,'destroy']);
+
+Route::get('/BookingStatus', [BookingStatusController::class,'index'])->name('bookingstatus.index');
+Route::get('/BookingStatus/create', [BookingStatusController::class,'create'])->name('bookingstatus.create');
+Route::post('/BookingStatus/store', [BookingStatusController::class,'store'])->name('bookingstatus.store');
+Route::get('/BookingStatus/{id}/edit', [BookingStatusController::class,'edit']);
+Route::put('/BookingStatus/{id}/update', [BookingStatusController::class,'update']);
+Route::get('/BookingStatus/{id}/delete', [BookingStatusController::class,'destroy']);
