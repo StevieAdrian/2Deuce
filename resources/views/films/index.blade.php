@@ -24,7 +24,7 @@
         </nav>
         <div class="container">
             <div class="d-flex justify-content-end">
-                <a href="films/create" class="btn btn-dark mt-2">New Film</a>
+                <a href="{{ route('films.create') }}" class="btn btn-dark mt-2">New Film</a>
             </div>
 
 
@@ -49,9 +49,9 @@
                     <td>{{ $loop->index+1 }}</td>
                     <td>{{ $ms_film->FilmName }}</td>
                     <td>{{ $ms_film->FilmDirector }}</td>
-                    <td>{{ $ms_film->MaturityRatingId }}</td>
+                    <td>{{ $ms_film->maturityRating->MaturityRating }}</td>
                     <td>{{ $ms_film->FilmDuration }}</td>
-                    <td>{{ $ms_film->FilmStatusID }}</td>
+                    <td>{{ $ms_film->filmStatus->Filmstatus }}</td>
                     <td>{{ $ms_film->FilmSynopsis }}</td>
                     <td>{{ $ms_film->FilmWriter }}</td>
                     <td>

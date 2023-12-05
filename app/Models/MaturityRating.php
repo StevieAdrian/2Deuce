@@ -12,4 +12,9 @@ class MaturityRating extends Model
     protected $table ='ms_maturityrating';
 
     protected $fillable = ['MaturityRating'];
+
+    public function films()
+    {
+        return $this->hasMany('App\Models\Films');
+    }
 }

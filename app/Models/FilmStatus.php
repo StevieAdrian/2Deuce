@@ -12,4 +12,9 @@ class FilmStatus extends Model
     protected $table ='ms_filmstatus';
 
     protected $fillable = ['Filmstatus'];
+
+    public function films()
+    {
+        return $this->hasMany('App\Models\Films');
+    }
 }

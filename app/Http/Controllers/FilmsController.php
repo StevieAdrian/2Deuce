@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Films;
+use App\Models\MaturityRating;
+use App\Models\FilmStatus;
 
 class FilmsController extends Controller
 {
@@ -22,7 +24,14 @@ class FilmsController extends Controller
      */
     public function create()
     {
-        return view('films.create');
+        $maturity = MaturityRating::all();
+        $filmstatus =FilmStatus::all();
+
+
+        return view('films.create',[
+            'maturity' => $maturity,
+            'filmstatus' => $filmstatus
+        ]);
     }
 
     /**
@@ -40,6 +49,7 @@ class FilmsController extends Controller
             'FilmWriter' => 'required|string',
             'FilmPoster' => 'required|image|mimes:jpeg,png,jpg,gif|max:10000',
         ]);
+        
 
         //Upload Image
         $imageName = time().'.' .$request->FilmPoster->extension();
@@ -73,8 +83,14 @@ class FilmsController extends Controller
     public function edit(string $id)
     {
         $ms_films = Films::where('id',$id)->first();
+        $maturity = MaturityRating::all();
+        $filmstatus =FilmStatus::all();
 
-        return view('films.edit', ['films' => $ms_films]);
+        return view('films.edit', [
+            'films' => $ms_films,
+            'maturity' => $maturity,
+            'filmstatus' => $filmstatus
+        ]);
     }
 
     /**
