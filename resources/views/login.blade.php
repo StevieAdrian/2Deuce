@@ -1,69 +1,59 @@
-<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@extends('template.app')
+@section('content')
+    <!--=============== BOOTSTRAP ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-        <!--=============== REMIXICONS ===============-->
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="{{asset('css/style.css')}}">
-        <!-- <link rel="stylesheet" href="resources/css/styles.css"> -->
-        <!-- <link rel="stylesheet" href="{{ asset('resources/css/styles.css') }}"> -->
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
-        <title>Animated login form - Bedimcode</title>
-    </head>
-    <body>
-        <div class="login">
-            <img src="assets/login-bg.png" alt="login image" class="login__img">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="{{asset('css/login.css')}}">
+    <!-- <link rel="stylesheet" href="resources/css/styles.css"> -->
+    <!-- <link rel="stylesheet" href="{{ asset('resources/css/styles.css') }}"> -->
 
-            <form action="{{ route('loginProcess') }}" class="login__form" method="POST">
-            @csrf
-            @method('POST')
-            <h1 class="login__title">Login</h1>
+    <div class="login">
 
-            <div class="login__content">
-                <div class="login__box">
-                    <i class="ri-user-3-line login__icon"></i>
+        <form action="{{ route('loginProcess') }}" class="login__form" method="POST">
+        @csrf
+        @method('POST')
+        <h1 class="login__title">Login</h1>
+        <h2 class="login__subtitle">Welcome back! Let’s get you logged in.</h2>
 
-                    <div class="login__box-input">
-                        <input name="email" type="email" required class="login__input" id="login-email" placeholder=" ">
-                        <label for="login-email" class="login__label">Email</label>
-                    </div>
-                </div>
-
-                <div class="login__box">
-                    <i class="ri-lock-2-line login__icon"></i>
-
-                    <div class="login__box-input">
-                        <input name="password" type="password" required class="login__input" id="login-pass" placeholder=" ">
-                        <label for="login-pass" class="login__label">Password</label>
-                        <i class="ri-eye-off-line login__eye" id="login-eye"></i>
-                    </div>
-                </div>
+        <div class="login__content">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Username</label>
+                <input type="text" class="login__field form-control" id="formGroupExampleInput" placeholder="Enter your username here">
             </div>
 
-            <div class="login__check">
-                <div class="login__check-group">
-                    <input type="checkbox" class="login__check-input" id="login-check">
-                    <label for="login-check" class="login__check-label">Remember me</label>
-                </div>
-
-                <a href="#" class="login__forgot">Forgot Password?</a>
+            <div class="mb-3">
+                <label for="inputPassword5" class="form-label">Password</label>
+                <input type="password" id="inputPassword5" class="login__field form-control" aria-describedby="passwordHelpBlock" placeholder="Enter your password here">
             </div>
-
-            <button type="submit" class="login__button">Login</button>
-
-            <p class="login__register">
-                Don't have an account?
-                <a href="{{ route('register') }}">Register</a>
-            </p>
-            </form>
         </div>
 
-        <!--=============== MAIN JS ===============-->
-        <!-- <script src="resources/js/main.js"></script> -->
-        <script src="{{ asset('js/script.js') }}"></script>
-    </body>
-</html>
+        <div class="login__check">
+            <div class="login-check form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="remember-label form-check-label" for="flexCheckDefault">
+                    Remember me
+                </label>
+            </div>
+
+            <a href="#" class="login__forgot">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="login__button btn btn-outline-warning">Login</button>
+
+        <p class="login__register">
+            Don't have an account yet?
+            <a class="register__link" href="{{ route('register') }}">Sign Up</a>
+        </p>
+        </form>
+    </div>
+
+    <!--=============== BOOTSTRAP JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+@endsection
