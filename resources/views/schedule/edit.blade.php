@@ -22,7 +22,7 @@
 
     <div class="container">
         <h1>Edit Schedule</h1>
-        <form method="POST" action="{{ route('schedule.update', $schedule->id) }}">
+        <form method="POST" action="/Schedule/{{ $schedule->id }}/update">
             @csrf
             @method('PUT')
 
@@ -45,7 +45,7 @@
                 <label for="FilmId" class="form-label">Film</label>
                 <select class="form-control" id="FilmId" name="FilmId" required>
                     @foreach($films as $film)
-                        <option value="{{ $film->id }}" {{ $film->id == $schedule->FilmId ? 'selected' : '' }}>{{ $film->title }}</option>
+                        <option value="{{ $film->id }}" {{ $film->id == $schedule->FilmId ? 'selected' : '' }}>{{ $film->FilmName }}</option>
                     @endforeach
                 </select>
             </div>
@@ -53,10 +53,10 @@
             <div class="mb-3">
                 <label for="StudioId" class="form-label">Studio</label>
                 <select class="form-control" id="StudioId" name="StudioId" required>
-                    @foreach($studios as $studio)
-                        <option value="{{ $studio->id }}" {{ $studio->id == $schedule->StudioId ? 'selected' : '' }}>{{ $studio->name }}</option>
+                    @foreach($studio as $studioItem)
+                        <option value="{{ $studioItem->id }}" {{ $studioItem->id == $schedule->StudioId ? 'selected' : '' }}>{{ $studioItem->StudioName }}</option>
                     @endforeach
-                </select>
+                </select>                
             </div>
 
             <button type="submit" class="btn btn-primary">Update Schedule</button>

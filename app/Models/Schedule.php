@@ -26,6 +26,6 @@ class Schedule extends Model
 
     public function studio()
     {
-        return $this->belongsTo('App\Models\Studio','FilmId');
+        return $this->belongsTo('App\Models\Studio','StudioId');
     }
 }

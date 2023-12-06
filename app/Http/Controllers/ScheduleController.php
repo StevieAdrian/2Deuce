@@ -41,8 +41,8 @@ class ScheduleController extends Controller
             'ScheduleDate' =>'required|date',
             'ScheduleStart' =>'date_format:H:i',
             'ScheduleEnd' =>'required|date_format:H:i|after:ScheduleStart',
-            'FilmId' =>'required|exists:films,id',
-            'StudioId' =>'required|exists:studio,id',
+            'FilmId' =>'required|exists:ms_films,id',
+            'StudioId' =>'required|exists:ms_studio,id',
         ]);
 
         $ms_schedule = new Schedule();
@@ -86,13 +86,13 @@ class ScheduleController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'ScheduleDate' =>'required|date',
-            'ScheduleStart' =>'date_format:H:i',
-            'ScheduleEnd' =>'required|date_format:H:i|after:ScheduleStart',
-            'FilmId' =>'required|exists:films,id',
-            'StudioId' =>'required|exists:studio,id',
+            'ScheduleDate' =>'required',
+            'ScheduleStart' =>'required',
+            'ScheduleEnd' =>'required',
+            'FilmId' =>'required',
+            'StudioId' =>'required',
         ]);
-
+                
         $ms_schedule = Schedule::where('id',$id)->first();
 
         $ms_schedule->ScheduleDate = $request->ScheduleDate;

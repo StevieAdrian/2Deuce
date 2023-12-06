@@ -19,8 +19,8 @@ class Films extends Model
     'FilmStatusID', 
     'FilmSynopsis', 
     'FilmWriter', 
-    'FilmPoster
-    '];
+    'FilmPoster',
+    ];
 
     public function maturityRating()
     {

@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ms_films', function (Blueprint $table) {
+        Schema::create('ms_theaters', function (Blueprint $table) {
             $table->id();
+            $table->string('Name');
+            $table->integer('NumberOfStudios');
+            $table->string('Address');
             $table->timestamps();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('ms_films');
+        Schema::dropIfExists('ms_theaters');
     }
 };
