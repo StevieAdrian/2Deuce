@@ -21,12 +21,12 @@ class TheatersController extends Controller
     public function store(Request $request)
     {
         Theaters::create([
-            'TheaterID' => $request->TheaterID,
+            // 'TheaterID' => $request->TheaterID,
             'Name' => $request->Name,
             'NumberOfStudios' => $request->NumberOfStudios,
             'Address' => $request->Address,
         ]);
-        
+
         return back()->withSucess('New Theaters Added');
     }
 }
