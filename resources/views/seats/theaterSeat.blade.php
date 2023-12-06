@@ -14,9 +14,18 @@
             <div class = "dateInfo">Thursday, 30 November</div>
         </div>
 
-        <div class="row">
+        <div class="row" name="SeatName">
             @for($i = 1; $i <= 17; $i++)
-            <div class="seat">A{{$i}}</div>
+                <div class="seat">A{{$i}}</div>
+                {{-- @php
+                    $seat = 'A'.$i;
+                @endphp --}}
+                {{-- {{$taken->SeatName}} --}}
+                {{-- @if(isset($taken) && $taken === $seat)
+                    <div class="seatTaken">{{ $seat }}</div>
+                @else
+                    <div class="seat">{{ $seat }}</div>
+                @endif --}}
             @endfor
         </div>
         <div class="row">
@@ -66,13 +75,20 @@
 
     <div class="line"></div>
     <div class="">
-        <div class="affirm"><img src="/assets/seat.png" id="seatImg">Seat Chosen</div>
-        <div class="taken"></div>
-        <div class="totalAffirm"><img src="/assets/subTotal.png" id="subTotal">Sub Total:</div>
-        <div class="taken"><span id="price"></span></div>
-        <a class="proc" href="{{route('seats.theaterSeat')}}">
-            CHOOSE SEAT
-        </a>
+        <form action="{{route('save.seats')}}" method="POST" id="Seat">
+            @csrf
+            <div class="affirm"><img src="/assets/seat.png" id="seatImg">Seat Chosen</div>
+            <div class="taken"> </div>
+            <div class="totalAffirm"><img src="/assets/subTotal.png" id="subTotal">Sub Total:</div>
+            <input name="SeatName" style="display:none" />
+            <div class="taken"><span id="price"></span></div>
+            <input name="SubTotal" style="display:none" />
+            {{-- <a class="proc" href="{{route('movie')}}"> --}}
+                <button class="proc">
+                    CHOOSE SEAT
+                </button>
+            {{-- </a> --}}
+        </form>
     </div>
     <script src="{{ asset('js/seat.js') }}"></script>
 
