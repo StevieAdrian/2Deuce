@@ -32,7 +32,7 @@ class UserController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        return redirect()->route('register');
+        return redirect()->route('movie');
     }
 
     public function loginProcess(Request $request){
@@ -44,7 +44,7 @@ class UserController extends Controller
             $request->session()->regenerate();
             // dd($request);
             // var_dump($request);
-            return redirect()->route('home');
+            return redirect()->route('movie');
         }
 
     }
