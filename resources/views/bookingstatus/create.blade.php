@@ -30,16 +30,16 @@
 
     <div class="container">
         <div>
-            <h1>Create Film Status</h1>
+            <h1>Create Booking Status</h1>
             <div class="row">
                 <div class="col-sm-12">
-                    <form method="POST" action="/FilmStatus/store" enctype="multipart/form-data">
+                    <form method="POST" action="/BookingStatus/store" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
-                            <label for="Filmstatus" class="form-label">Film Status</label>
-                            <input type="text" class="form-control" id="Filmstatus" name="Filmstatus" value="{{ old('Filmstatus') }}">
-                            @if($errors->has('Filmstatus'))   
-                                <span class="text-danger">{{ $errors->first('Filmstatus') }}</span>
+                            <label for="BookingStatus" class="form-label">Booking Status</label>
+                            <input type="text" class="form-control" id="BookingStatus" name="BookingStatus" value="{{ old('BookingStatus') }}">
+                            @if($errors->has('BookingStatus'))   
+                                <span class="text-danger">{{ $errors->first('BookingStatus') }}</span>
                             @endif
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>

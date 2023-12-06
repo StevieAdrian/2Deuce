@@ -15,13 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('FilmName');
             $table->string('FilmDirector');
-            $table->integer('MaturityRatingId');
+            $table->unsignedInteger('MaturityRatingId');
             $table->integer('FilmDuration');
-            $table->integer('FilmStatusID');
+            $table->unsignedInteger('FilmStatusID');
             $table->text('FilmSynopsis');
             $table->string('FilmWriter');
             $table->string('FilmPoster');    
             $table->timestamps();
+
+            $table->foreign('MaturityRatingId')->references('id')->on('ms_maturityrating');
+            $table->foreign('FilmStatusID')->references('id')->on('ms_filmstatus');
         });
     }
 

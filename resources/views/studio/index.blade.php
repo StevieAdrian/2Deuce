@@ -24,26 +24,28 @@
     </nav>
     <div class="container">
         <div class="d-flex justify-content-end">
-            <a href="{{ route('maturity.create') }}" class="btn btn-dark mt-2">New Maturity Rating</a>
+            <a href="{{ route('studio.create') }}" class="btn btn-dark mt-2">New Studio</a>
         </div>
 
 
         <table class="table table-hover mt-2">
             <thead>
               <tr>
-                <th>Film Maturity Rating Id</th>
-                <th>Film Maturity Rating</th>
+                <th>Studio Id</th>
+                <th>Studio Name</th>
+                <th>Theater Name</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-                @foreach ($maturity as $ms_maturityrating)
+                @foreach ($studio as $ms_studio)
               <tr>
                 <td>{{ $loop->index+1 }}</td>
-                <td>{{ $ms_maturityrating->MaturityRating }}</td>
+                <td>{{ $ms_studio->StudioName }}</td>
+                <td>{{ $ms_studio->theater->TheaterName }}</td>
                 <td>
-                    <a href="MaturityRating/{{ $ms_maturityrating->id }}/edit" class="btn btn-dark  btn-sm">Edit</a>
-                    <a href="MaturityRating/{{ $ms_maturityrating->id }}/delete" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="Studio/{{ $ms_studio->id }}/edit" class="btn btn-dark  btn-sm">Edit</a>
+                    <a href="Studio/{{ $ms_studio->id }}/delete" class="btn btn-danger btn-sm">Delete</a>
                 </td>
               </tr>
               @endforeach

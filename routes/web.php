@@ -3,9 +3,18 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FilmsController;
+
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\TheatersController;
 use App\Http\Controllers\TheaterSeatController;
+
+use App\Http\Controllers\FilmStatusController;
+use App\Http\Controllers\MaturityRatingController; 
+
+use App\Http\Controllers\BookingStatusController; 
+
+use App\Http\Controllers\StudioController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,10 +31,10 @@ Route::get('/register', [UserController::class, 'register'])->name('register')->
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::get('/home', [UserController::class, 'home'])->name('home')->middleware('auth');
 
-// Route::post('/register', [UserController::class, 'registerProcess'])->name('registerProcess');
+Route::post('/register', [UserController::class, 'registerProcess'])->name('registerProcess');
 Route::post('/login', [UserController::class, 'loginProcess'])->name('loginProcess');
 Route::get('/logout', [UserController::class, 'logout'])->name('logoutProcess');
-
+    
 Route::get('/movie', [MovieController::class,  'movie'])->name('movie');
 Route::get('/payment', [MovieController::class, 'payment'])->name('payment');
 Route::get('/dashboard', [MovieController::class, 'dashboard'])->name('dashboard');
@@ -56,4 +65,22 @@ Route::get('/FilmStatus/create', [FilmStatusController::class,'create'])->name('
 Route::post('/FilmStatus/store', [FilmStatusController::class,'store'])->name('filmstatus.store');
 Route::get('/FilmStatus/{id}/edit', [FilmStatusController::class,'edit']);
 Route::put('/FilmStatus/{id}/update', [FilmStatusController::class,'update']);
+
 Route::get('/FilmStatus/{id}/delete', [FilmStatusController::class,'destroy']);
+
+Route::get('/FilmStatus/{id}/delete', [FilmStatusController::class,'destroy']);
+
+Route::get('/BookingStatus', [BookingStatusController::class,'index'])->name('bookingstatus.index');
+Route::get('/BookingStatus/create', [BookingStatusController::class,'create'])->name('bookingstatus.create');
+Route::post('/BookingStatus/store', [BookingStatusController::class,'store'])->name('bookingstatus.store');
+Route::get('/BookingStatus/{id}/edit', [BookingStatusController::class,'edit']);
+Route::put('/BookingStatus/{id}/update', [BookingStatusController::class,'update']);
+Route::get('/BookingStatus/{id}/delete', [BookingStatusController::class,'destroy']);
+
+Route::get('/Studio', [StudioController::class,'index'])->name('studio.index');
+Route::get('/Studio/create', [StudioController::class,'create'])->name('studio.create');
+Route::post('/Studio/store', [StudioController::class,'store'])->name('studio.store');
+Route::get('/Studio/{id}/edit', [StudioController::class,'edit']);
+Route::put('/Studio/{id}/update', [StudioController::class,'update']);
+Route::get('/Studio/{id}//delete', [StudioController::class,'delete']);
+

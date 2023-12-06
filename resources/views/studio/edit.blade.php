@@ -30,16 +30,28 @@
 
     <div class="container">
         <div>
-            <h1>Create Film Status</h1>
             <div class="row">
                 <div class="col-sm-12">
-                    <form method="POST" action="/FilmStatus/store" enctype="multipart/form-data">
+                    <h3 class="text-muted">Film Edit #{{ $theater->TheaterName }}</h3>
+                    <form method="POST" action="/Studio/{{ $studio->id }}/update" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                         <div class="mb-3">
-                            <label for="Filmstatus" class="form-label">Film Status</label>
-                            <input type="text" class="form-control" id="Filmstatus" name="Filmstatus" value="{{ old('Filmstatus') }}">
-                            @if($errors->has('Filmstatus'))   
-                                <span class="text-danger">{{ $errors->first('Filmstatus') }}</span>
+                            <label for="StudioName" class="form-label">Studio Name</label>
+                            <input type="text" class="form-control" id="StudioName" name="StudioName" value="{{ old('StudioName') }}">
+                            @if($errors->has('StudioName'))   
+                                <span class="text-danger">{{ $errors->first('StudioName') }}</span>
+                            @endif
+                        </div>
+                        <div class="mb-3">
+                            <label for="TheaterID" class="form-label">Theater</label>
+                            <select name="TheaterID" class="custom-select">
+                                @foreach($theater as $teater)
+                                    <option value="{{ $teater->id }}">{{ $teater->TheaterName}}</option>
+                                @endforeach
+                            </select>
+                            @if($errors->has('TheaterID'))   
+                                <span class="text-danger">{{ $errors->first('TheaterID') }}</span>
                             @endif
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
