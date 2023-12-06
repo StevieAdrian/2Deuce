@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('ms_theaters', function (Blueprint $table) {
             $table->id();
-            $table->string('TheaterID');
+            // $table->string('TheaterID');
             $table->string('Name');
             $table->integer('NumberOfStudios');
             $table->string('Address');
