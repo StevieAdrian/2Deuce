@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="{{asset('css/theaterSeat.css')}}">
 </head>
 <body>
-    
     <div class="main">
+        <div class="titleInfo">
+            <div class = "theaterInfo">Theater Name | </div>
+            <div class = "dateInfo">Thursday, 30 November</div>
+        </div>
+
         <div class="row">
             @for($i = 1; $i <= 17; $i++)
             <div class="seat">A{{$i}}</div>
@@ -60,6 +64,15 @@
         <div class="screen">Screen</div>
     </div>
 
+    <div class="line"></div>
+    <div class="">
+        <div class="affirm">Seat Chosen</div>
+        <div class="taken"></div>
+        <div class="totalAffirm">Sub Total:</div>
+        {{-- <option id="movie" value="45"></option> --}}
+        <div class="taken"><span id="price"></span></div>
+    </div>
     <script src="{{ asset('js/seat.js') }}"></script>
+
 </body>
 </html>
