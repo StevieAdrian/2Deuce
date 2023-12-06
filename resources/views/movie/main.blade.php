@@ -1,6 +1,6 @@
 @extends('template.app')
 @section('content')
-    <div class="d-flex justify-content-center" style="background-color: #1B1919">
+    <div class="d-flex justify-content-center pallete-black">
         <div id="carouselExample" class="carousel slide pt-2 pb-3">
             <div class="carousel-indicators">
                 <ol class="carousel-indicators">
@@ -13,28 +13,32 @@
                     <li data-bs-target="#carouselExample" data-bs-slide-to="6"></li>
                 </ol>
             </div>
-            <div class="carousel-inner ">
+            <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="assets/wish.png" class="d-block img-fluid carousel-inner img" alt="wish">
+                    <img class="d-block img-fluid carousel-inner img carousel-poster" src="assets/wish.png" alt="wish">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/hungergames.png" class="d-block img-fluid carousel-inner img" alt="hungergames">
+                    <img class="d-block img-fluid carousel-inner img carousel-poster" src="assets/hungergames.png"
+                        alt="hungergames">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/troll.png" class="d-block img-fluid carousel-inner img" alt="troll">
+                    <img class="d-block img-fluid carousel-inner img carousel-poster" src="assets/troll.png" alt="troll">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/rumahiblis.png" class="d-block img-fluid carousel-inner img" alt="rumahiblis">
+                    <img class="d-block img-fluid carousel-inner img carousel-poster" src="assets/rumahiblis.png"
+                        alt="rumahiblis">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/hidupmemangkomedi.png" class="d-block img-fluid carousel-inner img"
+                    <img class="d-block img-fluid carousel-inner img carousel-poster" src="assets/hidupmemangkomedi.png"
                         alt="hidupmemangkomedi">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/172days.png" class="d-block img-fluid carousel-inner img" alt="172days">
+                    <img class="d-block img-fluid carousel-inner img carousel-poster" src="assets/172days.png"
+                        alt="172days">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/thanksgiving.png" class="d-block img-fluid carousel-inner img" alt="thanksgiving">
+                    <img class="d-block img-fluid carousel-inner img carousel-poster" src="assets/thanksgiving.png"
+                        alt="thanksgiving">
                 </div>
             </div>
             <button class="carousel-control-prev btn btn-dark" type="button" data-bs-target="#carouselExample"
@@ -50,34 +54,36 @@
         </div>
     </div>
 
-    <div class="d-flex justify-content-start align-items-center ps-5"
-        style="font-size: 48px; color:white; background-color: #1B1919; height: 100;">
-        <div style="width: 30px; background-color: #370000; height: 110px; margin-left:130px">
+    <div class="d-flex justify-content-start align-items-center ps-5 pallete-black nowshowing-button">
+        <div class="nowshowingupcoming-bar">
         </div>
-        <div style="margin-left: 20px;"> NOW SHOWING </div>
+        <div id="now-showing" class="ms-4">NOW SHOWING</div>
     </div>
-    @foreach($movies as $movie)
-    <div class="d-flex justify-content-center pt-5 pb-5" style="background-color: #1B1919">
-        <a href="{{route('details', ['id' => $movie->id])}}" class="text-center text-white"
-            style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
-            <div style="margin-bottom: 10px;">
-                <img src="{{asset('poster/' .$movie->FilmPoster)}}" alt="pos1" class="img-fluid" style="width:auto ; height:25rem">
-                <div class="mt-3">{{$movie->FilmName}}</div>
-            </div>
-            <div style="display: flex; align-items: center;">
-                <img src="assets/timelogo.png" alt="timelogo">
-                <div class="ml-2" style="margin-left: 5px;">{{$movie->FilmDuration}} m</div>
-                <img style="width: 50px; height:30px" class="ps-2" src="assets/r13.jpg" alt="r13">
-            </div>
-        </a>
-    </div>
+
+    @foreach ($movies as $movie)
+        <div class="d-flex justify-content-center pt-5 pb-5" style="background-color: #1B1919">
+            <a href="{{ route('details', ['id' => $movie->id]) }}" class="text-center text-white"
+                style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
+                <div style="margin-bottom: 10px;">
+                    <img src="{{ asset('poster/' . $movie->FilmPoster) }}" alt="pos1" class="img-fluid"
+                        style="width:auto ; height:25rem">
+                    <div class="mt-3">{{ $movie->FilmName }}</div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <img src="assets/timelogo.png" alt="timelogo">
+                    <div class="ml-2" style="margin-left: 5px;">{{ $movie->FilmDuration }} m</div>
+                    <img style="width: 50px; height:30px" class="ps-2" src="assets/r13.jpg" alt="r13">
+                </div>
+            </a>
+        </div>
     @endforeach
-    <div class="d-flex justify-content-start align-items-center ps-5"
-        style="font-size: 48px; color:white; background-color: #1B1919; height: 100;">
-        <div style="width: 30px; background-color: #370000; height: 110px; margin-left:130px">
+
+    <div class="d-flex justify-content-start align-items-center ps-5 pallete-black nowshowing-button">
+        <div class="nowshowingupcoming-bar">
         </div>
-        <div style="margin-left: 20px;"> UPCOMING </div>
+        <div id="upcoming" class="ms-4">UPCOMING</div>
     </div>
+
     <div class="d-flex justify-content-center pt-5 pb-5" style="background-color: #1B1919">
         <a href="#" class="text-center text-white"
             style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">

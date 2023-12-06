@@ -1,59 +1,3 @@
-/* *{
-    background-color: ;
-} */
-
-body{ 
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-footer {
-    margin-top: auto;
-}
-
-.navbar{
-    padding-bottom: 0!important;
-}
-
-.logo-button {
-    width: 490px;
-    height: 145px;
-}
-
-.home-button {
-    display: flex;
-    width: 75px;
-    height: 17px;
-    justify-content: center;
-    align-items: center;
-}
-
-.booking-button {
-    display: flex;
-    width: 118px;
-    height: 17px;
-    justify-content: center;
-    align-items: center;
-}
-
-.nowshowing-button {
-    display: flex;
-    width: 196px;
-    height: 17px;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.upcoming-button {
-    display: flex;
-    width: 141px;
-    height: 17px;
-    padding-right: 0px;
-    justify-content: center;
-    align-items: center;
-}
-
 .w-30 {
     width: 30%;
 }
@@ -61,60 +5,68 @@ footer {
 .w-70 {
     width: 70%;
 }
-    
+
+.w-78{
+    width: 78%;
+}
+
+.w-80{
+    width: 80%;
+}
+
+.w-90{
+    width: 90%;
+}
+
+.navbar{
+    padding-bottom: 0!important;
+}
+
 .carousel-inner img {
     width: 50%; 
     margin: 0 auto; 
 }
 
+.logo-button {
+    width: 490px;
+    height: 145px;
+}
+
 .footer-button{
     color: rgba(224, 224, 224, 0.65);
-    font-family: Poppins;
     font-size: 24px;
-    font-style: normal;
     font-weight: 600;
-    line-height: normal;
-    letter-spacing: 1.2px;
 }
 
 .follow-button{
     color:#E0E0E0;
-    font-family: Poppins;
-    font-size: 20px;
-    font-style: normal;
+    font-size: 24px;
     font-weight: 600;
-    line-height: normal;
-    letter-spacing: 1.2px;
 }
 
-.footer-font {
-    color: #E0E0E0;
-    font-family: Modern Antiqua;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
-
-.footer-p {
-    color: rgba(255, 255, 255, 0.60);
-    padding-bottom: both;
-    text-indent: cap;
-    font-family: Poppins;
+.company{
+    color: rgba(224, 224, 224, 0.65);
     font-size: 14px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    letter-spacing: 0.7px;
 }
 
-.img-size {
+.insta-size {
+    width: 15px;
+    height: 15px;
+}
+
+.twitter-size {
+    width: 22px;
+    height: 22px;
+}
+
+.youtube-size {
     width: 20px;
-    height: 20px;
+    height: 16px;
 }
 
-.color-maroon {
-    color: maroon;
+.facebook-size{
+    width: 10.5px;
+    height: 20px;
 }
 
 .color-grey {
@@ -126,6 +78,31 @@ footer {
     height: 70px;
 }
 
+footer {
+    margin-top: auto;
+}
+
+.carousel-poster {
+    width: 100%;
+    height: auto; 
+}
+
+.nowshowing-button{
+    font-size: 48px;
+    color: white;
+}
+
+.upcoming-button{
+    font-size: 48px;
+    color: white;
+}
+
+.nowshowingupcoming-bar{
+    width: 30px;
+    background-color: #470000;
+    height: 110px;
+    margin-left:130px
+}
 
 .custom-border {
     border-width: 2px !important; 
@@ -152,7 +129,7 @@ footer {
 }
 
 .admin-nav{
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .full-black {
@@ -166,3 +143,83 @@ footer {
 .admin-dash{
     font-size: 40px;
 }
+
+.pallete-maroon{
+    background-color: #470000; 
+}
+
+.pallete-black{
+    background-color: #1B1919;
+}
+
+.pallete-orange{
+    background-color: #D58936;
+}
+
+.pallete-white{
+    background-color: #E0E0E0;
+}
+
+.maroon{
+    color: #470000;
+}
+
+.black{
+    color: #1B1919;
+}
+
+.orange{
+    color: #D58936;
+}
+
+.white{
+    color: #E0E0E0;
+}
+
+.b-black{
+    border-color: #1B1919;
+}
+
+.b-orange{
+    border-color: #D58936 !important;
+}
+
+.b-white{
+    border-color: #E0E0E0;
+}
+
+.left-box{
+    width: 260px;
+    height: 520px;
+}
+
+.right-box{
+    width: 1550px;
+    height: 520px;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+    background-color: #1B1919;
+    color: #E0E0E0;
+ }
+ 
+ .table-striped > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th {
+    background-color: #1B1919;
+    color: #E0E0E0;
+ }
+ 
+ .table-striped > thead > tr:nth-child(odd) > td, .table-striped > thead > tr:nth-child(odd) > th {
+    background-color: #1B1919;
+    color: #E0E0E0;
+ }
+
+ .center-table {
+    display: flex;
+    justify-content: center;
+}
+
+.hr-set{
+    border-top: 3px solid #FFFFFF;
+    width: 100%;
+}
+ 
