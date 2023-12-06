@@ -45,11 +45,16 @@
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
     color: #D58936;
-    border: 1.5px solid;
-    border-radius: 10px;
-    border-color: #D58936;
     font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid #D58936;
+    border-radius: 7px;
+    text-decoration: none;
+}
+
+.proc:hover{
+    background-color: #D58936;
+    color:#1B1919
 }

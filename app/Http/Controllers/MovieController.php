@@ -29,4 +29,9 @@ class MovieController extends Controller
         return view('movie.details', ['movie' => $movies]);
         // return view('movie.details', compact('movies'));
     }
+
+    public function schedule()
+    {
+        return view('movie.schedule');
+    }
 }

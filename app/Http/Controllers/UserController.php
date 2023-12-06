@@ -32,19 +32,23 @@ class UserController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        return redirect()->route('register');
+        return redirect()->route('movie');
     }
 
     public function loginProcess(Request $request){
 
-        if(Auth::attempt(
-            ['email' => $request->email,
-            'password' => $request->password])
-        ){
-            $request->session()->regenerate();
-            // dd($request);
-            // var_dump($request);
-            return redirect()->route('home');
+        if($user->role == 'admin'){
+            // return redirect()->intended('/')
+        } else {
+            if(Auth::attempt(
+                ['email' => $request->email,
+                'password' => $request->password])
+            ){
+                $request->session()->regenerate();
+                // dd($request);
+                // var_dump($request);
+                return redirect()->route('movie');
+            }
         }
 
     }
