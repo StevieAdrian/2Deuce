@@ -14,7 +14,7 @@ class ScheduleController extends Controller
     public function index()
     {
         return view('schedule.index',[
-          'schedule' => Schedule::get()
+            'schedule' => Schedule::get()
         ]);
     }
 
@@ -27,8 +27,8 @@ class ScheduleController extends Controller
         $studio= Studio::all();
 
         return view('schedule.create',[
-          'films' => $films,
-          'studio' => $studio
+            'films' => $films,
+            'studio' => $studio
         ]);
     }
 
@@ -74,9 +74,9 @@ class ScheduleController extends Controller
         $studio= Studio::all();
 
         return view('schedule.edit', [
-          'schedule' => $ms_schedule,
+            'schedule' => $ms_schedule,
             'films' => $films,
-          'studio' => $studio
+            'studio' => $studio
         ]);
     }
 

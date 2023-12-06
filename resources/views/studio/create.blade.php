@@ -19,9 +19,9 @@
             </li>
           </ul>
         </div>
-      
+
       </nav>
-      
+
         @if($message = Session::get('success'))
             <div class="alert alert-success alert-block">
                 <strong>{{ $message }}</strong>
@@ -38,7 +38,7 @@
                         <div class="mb-3">
                             <label for="StudioName" class="form-label">Studio Name</label>
                             <input type="text" class="form-control" id="StudioName" name="StudioName" value="{{ old('StudioName') }}">
-                            @if($errors->has('StudioName'))   
+                            @if($errors->has('StudioName'))
                                 <span class="text-danger">{{ $errors->first('StudioName') }}</span>
                             @endif
                         </div>
@@ -46,10 +46,10 @@
                             <label for="TheaterID" class="form-label">Theater</label>
                             <select name="TheaterID" class="custom-select">
                                 @foreach($theater as $teater)
-                                    <option value="{{ $teater->id }}">{{ $teater->TheaterName}}</option>
+                                    <option value="{{ $teater->id }}">{{ $teater->Name}}</option>
                                 @endforeach
                             </select>
-                            @if($errors->has('TheaterID'))   
+                            @if($errors->has('TheaterID'))
                                 <span class="text-danger">{{ $errors->first('TheaterID') }}</span>
                             @endif
                         </div>
