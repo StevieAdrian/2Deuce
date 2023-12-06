@@ -21,4 +21,9 @@ class Studio extends Model
         return $this->belongsTo('App\Models\Theaters','TheaterID');
     }
 
+    public function schedule()
+    {
+        return $this->hasMany('App\Models\Schedule');
+    }
+
 }

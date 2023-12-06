@@ -31,4 +31,9 @@ class Films extends Model
     {
         return $this->belongsTo('App\Models\FilmStatus','FilmStatusID');
     }
+
+    public function schedule()
+    {
+        return $this->hasMany('App\Models\Schedule');
+    }
 }

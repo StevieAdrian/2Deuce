@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedInteger('StudioId');
             $table->timestamps();
 
-            $table->foreing('FilmId')->references('id')->on('ms_films');
+            $table->foreign('FilmId')->references('id')->on('ms_films');
             $table->foreign('StudioId')->references('id')->on('ms_studio');
         });
     }

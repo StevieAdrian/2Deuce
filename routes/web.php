@@ -15,6 +15,8 @@ use App\Http\Controllers\BookingStatusController;
 
 use App\Http\Controllers\StudioController;
 
+use App\Http\Controllers\ScheduleController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -83,4 +85,11 @@ Route::post('/Studio/store', [StudioController::class,'store'])->name('studio.st
 Route::get('/Studio/{id}/edit', [StudioController::class,'edit']);
 Route::put('/Studio/{id}/update', [StudioController::class,'update']);
 Route::get('/Studio/{id}//delete', [StudioController::class,'delete']);
+
+Route::get('/Schedule', [ScheduleController::class,'index'])->name('schedule.index');
+Route::get('/Schedule/create', [ScheduleController::class,'create'])->name('schedule.create');
+Route::post('/Schedule/store', [ScheduleController::class,'store'])->name('schedule.store');
+Route::get('/Schedule/{id}/edit', [ScheduleController::class,'edit']);
+Route::put('/Schedule/{id}/update', [ScheduleController::class,'update']);
+Route::get('/Schedule/{id}/delete', [ScheduleController::class,'delete']);
 
