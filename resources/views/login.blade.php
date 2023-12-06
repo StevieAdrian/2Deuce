@@ -23,12 +23,12 @@
         <div class="login__content">
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Username</label>
-                <input type="text" class="login__field form-control" id="formGroupExampleInput" placeholder="Enter your username here">
+                <input type="text" name="email" class="login__field form-control" id="formGroupExampleInput" placeholder="Enter your username here">
             </div>
 
             <div class="mb-3">
                 <label for="inputPassword5" class="form-label">Password</label>
-                <input type="password" id="inputPassword5" class="login__field form-control" aria-describedby="passwordHelpBlock" placeholder="Enter your password here">
+                <input type="password" name="password" id="inputPassword5" class="login__field form-control" aria-describedby="passwordHelpBlock" placeholder="Enter your password here">
             </div>
         </div>
 

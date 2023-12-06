@@ -36,8 +36,13 @@ Route::get('/home', [UserController::class, 'home'])->name('home')->middleware('
 Route::post('/register', [UserController::class, 'registerProcess'])->name('registerProcess');
 Route::post('/login', [UserController::class, 'loginProcess'])->name('loginProcess');
 Route::get('/logout', [UserController::class, 'logout'])->name('logoutProcess');
+
     
 Route::get('/movie', [MovieController::class,  'movie'])->name('movie');
+
+
+Route::get('/', [MovieController::class,  'movie'])->name('movie');
+
 Route::get('/payment', [MovieController::class, 'payment'])->name('payment');
 Route::get('/dashboard', [MovieController::class, 'dashboard'])->name('dashboard');
 Route::get('/details/{id}', [MovieController::class, 'details'])->name('details');
@@ -93,3 +98,5 @@ Route::get('/Schedule/{id}/edit', [ScheduleController::class,'edit']);
 Route::put('/Schedule/{id}/update', [ScheduleController::class,'update']);
 Route::get('/Schedule/{id}/delete', [ScheduleController::class,'delete']);
 
+
+Route::get('/FilmStatus/{id}/delete', [FilmStatusController::class,'destroy']);
