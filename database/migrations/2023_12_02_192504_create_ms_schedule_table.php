@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('ms_schedule', function (Blueprint $table) {
             $table->id();
-            
+            $table->date('ScheduleDate');
+            $table->time('ScheduleStart');
+            $table->time('ScheduleEnd');
             $table->unsignedInteger('FilmId');
             $table->unsignedInteger('StudioId');
             $table->timestamps();
