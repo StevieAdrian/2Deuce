@@ -12,10 +12,9 @@ class Theaters extends Model
     protected $table ='ms_theaters';
 
     protected $fillable = [
-    // 'TheaterID',
-    'Name',
-    'NumberOfStudios',
-    'Address',
+        'Name',
+        'NumberOfStudios',
+        'Address',
     ];
 
     public function studio()
