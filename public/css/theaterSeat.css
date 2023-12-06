@@ -142,6 +142,11 @@ body{
     color: #D58936;
 }
 
+.seatTaken{
+    background-color: red;
+    color:white
+}
+
 .proc{
     margin-top: 120px;
     margin-left: 80px;
@@ -156,6 +161,7 @@ body{
     border: 2px solid #D58936;
     border-radius: 7px;
     text-decoration: none;
+    background-color: #1B1919;
 }
 
 .proc:hover{

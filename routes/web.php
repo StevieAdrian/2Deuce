@@ -9,9 +9,9 @@ use App\Http\Controllers\TheatersController;
 use App\Http\Controllers\TheaterSeatController;
 
 use App\Http\Controllers\FilmStatusController;
-use App\Http\Controllers\MaturityRatingController; 
+use App\Http\Controllers\MaturityRatingController;
 
-use App\Http\Controllers\BookingStatusController; 
+use App\Http\Controllers\BookingStatusController;
 
 use App\Http\Controllers\StudioController;
 
@@ -37,7 +37,7 @@ Route::post('/register', [UserController::class, 'registerProcess'])->name('regi
 Route::post('/login', [UserController::class, 'loginProcess'])->name('loginProcess');
 Route::get('/logout', [UserController::class, 'logout'])->name('logoutProcess');
 
-    
+
 Route::get('/movie', [MovieController::class,  'movie'])->name('movie');
 
 
@@ -57,6 +57,7 @@ Route::get('/theaters/createTheaters', [TheatersController::class, 'create'])->n
 Route::post('/theaters/store', [TheatersController::class,'store'])->name('theaters.store');
 
 Route::get('/seats', [TheaterSeatController::class, 'seats'])->name('seats.theaterSeat');
+Route::post('/seats', [TheaterSeatController::class, 'saveSeats'])->name('save.seats');
 Route::get('/films/{id}/edit', [FilmsController::class, 'edit']);
 Route::put('/films/{id}/update', [FilmsController::class, 'update']);
 Route::get('/films/{id}/delete', [FilmsController::class, 'destroy']);
