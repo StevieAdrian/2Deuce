@@ -17,4 +17,10 @@ class Theaters extends Model
     'NumberOfStudios',
     'Address',
     ];
+
+    public function studio()
+    {
+        return $this->hasMany('App\Models\Studio');
+    }
+
 }

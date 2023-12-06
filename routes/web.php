@@ -13,6 +13,8 @@ use App\Http\Controllers\MaturityRatingController;
 
 use App\Http\Controllers\BookingStatusController; 
 
+use App\Http\Controllers\StudioController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,10 +31,10 @@ Route::get('/register', [UserController::class, 'register'])->name('register')->
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::get('/home', [UserController::class, 'home'])->name('home')->middleware('auth');
 
-// Route::post('/register', [UserController::class, 'registerProcess'])->name('registerProcess');
+Route::post('/register', [UserController::class, 'registerProcess'])->name('registerProcess');
 Route::post('/login', [UserController::class, 'loginProcess'])->name('loginProcess');
 Route::get('/logout', [UserController::class, 'logout'])->name('logoutProcess');
-
+    
 Route::get('/movie', [MovieController::class,  'movie'])->name('movie');
 Route::get('/payment', [MovieController::class, 'payment'])->name('payment');
 Route::get('/dashboard', [MovieController::class, 'dashboard'])->name('dashboard');
@@ -71,3 +73,10 @@ Route::post('/BookingStatus/store', [BookingStatusController::class,'store'])->n
 Route::get('/BookingStatus/{id}/edit', [BookingStatusController::class,'edit']);
 Route::put('/BookingStatus/{id}/update', [BookingStatusController::class,'update']);
 Route::get('/BookingStatus/{id}/delete', [BookingStatusController::class,'destroy']);
+
+Route::get('/Studio', [StudioController::class,'index'])->name('studio.index');
+Route::get('/Studio/create', [StudioController::class,'create'])->name('studio.create');
+Route::post('/Studio/store', [StudioController::class,'store'])->name('studio.store');
+Route::get('/Studio/{id}/edit', [StudioController::class,'edit']);
+Route::put('/Studio/{id}/update', [StudioController::class,'update']);
+Route::get('/Studio/{id}//delete', [StudioController::class,'delete']);
