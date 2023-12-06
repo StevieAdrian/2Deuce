@@ -20,7 +20,7 @@
             </ul>
         </div>
 
-      </nav>
+    </nav>
 
         {{-- @if($message = Session::get('success'))
             <div class="alert alert-success alert-block">
@@ -34,13 +34,6 @@
                 <div class="col-sm-12">
                     <form method="POST" action="/theaters/store" enctype="multipart/form-data">
                         @csrf
-                        <div class="mb-3">
-                            <label for="TheaterID" class="form-label">Theater ID</label>
-                            <input type="text" class="form-control" id="TheaterID" name="TheaterID" value="{{ old('TheaterID') }}">
-                            @if($errors->has('TheaterID'))
-                                <span class="text-danger">{{ $errors->first('TheaterID') }}</span>
-                            @endif
-                        </div>
                         <div class="mb-3">
                             <label for="Name" class="form-label">Name</label>
                             <input type="text" class="form-control" id="Name" name="Name" value="{{ old('Name') }}">

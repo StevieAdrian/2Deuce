@@ -19,7 +19,7 @@
           </ul>
         </div>
       </nav>
-      
+
     @if($message = Session::get('success'))
         <div class="alert alert-success alert-block">
             <strong>{{ $message }}</strong>
@@ -52,7 +52,7 @@
                             <label for="FilmId" class="form-label">Film</label>
                             <select class="form-control" id="FilmId" name="FilmId" required>
                                 @foreach($films as $film)
-                                    <option value="{{ $film->id }}">{{ $film->title }}</option>
+                                    <option value="{{ $film->id }}">{{ $film->FilmName }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -61,7 +61,7 @@
                             <label for="StudioId" class="form-label">Studio</label>
                             <select class="form-control" id="StudioId" name="StudioId" required>
                                 @foreach($studio as $studio)
-                                    <option value="{{ $studio->id }}">{{ $studio->name }}</option>
+                                    <option value="{{ $studio->id }}">{{ $studio->StudioName }}</option>
                                 @endforeach
                             </select>
                         </div>
