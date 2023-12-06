@@ -30,6 +30,7 @@ Route::get('/', [MovieController::class,  'movie'])->name('movie');
 Route::get('/payment', [MovieController::class, 'payment'])->name('payment');
 Route::get('/dashboard', [MovieController::class, 'dashboard'])->name('dashboard');
 Route::get('/details/{id}', [MovieController::class, 'details'])->name('details');
+Route::get('/schedule', [MovieController::class, 'schedule'])->name('schedule');
 
 Route::get('/films', [FilmsController::class, 'index'])->name('films.index');
 Route::get('/films/create', [FilmsController::class, 'create'])->name('films.create');
