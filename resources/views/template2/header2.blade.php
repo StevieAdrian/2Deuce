@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary pt-0">
-    <div class="container-fluid pallete-maroon" style="background-color: #470000">
+    <div class="container-fluid pallete-maroon pallete-maroon">
         <a class="navbar-brand ps-4" href="{{ route('movie') }}"><img src="assets/Logo.png" alt="Logo"
                 style="width:157.897px;height: 40px;">
         </a>
@@ -8,9 +8,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto" style="background-color: #470000">
+            <ul class="navbar-nav ml-auto pallete-maroon">
                 <li class="nav-item pe-4 pt-4 pb-4">
-                    <a class="nav-link white" href="{{ route('movie') }}">HOME</a>
+                    <a class="nav-link white" href="{{ route('main2') }}">HOME</a>
                 </li>
                 <li class="nav-item pe-4 pt-4 pb-4">
                     <a class="nav-link white" href="#">BOOKING</a>

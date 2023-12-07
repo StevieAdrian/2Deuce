@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary pt-0">
-    <div class="container-fluid" style="background-color: #470000">
+    <div class="container-fluid pallete-maroon">
         <a class="navbar-brand ps-4" href="#"><img src="assets/Logo.png" alt="Logo"
                 style="width:157.897px;height: 40px;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto pallete-black">
+            <ul class="navbar-nav ml-auto pallete-maroon">
                 <li class="nav-item pe-3 pt-4 pb-3 admin-nav">
                     <a class="nav-link white" href="#">HOME</a>
                 </li>
@@ -34,8 +34,7 @@
                                     <div class="dropdown-menu pallete-black" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item white d-flex justify-content-start align-items-center"
                                             href="#">
-                                            <img class="mr-2 dashboard-size" style="width: " src="assets/dashboard.png"
-                                                alt="dashboard">
+                                            <img class="mr-2 dashboard-size" src="assets/dashboard.png" alt="dashboard">
                                             <span>Admin Dashboard</span>
                                         </a>
                                         <hr class="dropdown-divider w-75 mx-0 my-1">

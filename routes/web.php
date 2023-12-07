@@ -21,6 +21,7 @@ use App\Http\Controllers\TheaterSeatController;
 Route::get('/register', [UserController::class, 'register'])->name('register')->middleware('guest');
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::get('/home', [UserController::class, 'home'])->name('home')->middleware('auth');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::post('/register', [UserController::class, 'registerProcess'])->name('registerProcess');
 Route::post('/login', [UserController::class, 'loginProcess'])->name('loginProcess');

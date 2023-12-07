@@ -32,6 +32,11 @@
     object-fit: cover; 
 }
 
+.deuce-header{
+    width:157.897px;
+    height: 40px;
+}
+
 .logo-button {
     width: 490px;
     height: 145px;

@@ -4,8 +4,7 @@
         <div class="container">
             <div class="d-flex justify-content-start align-items-center">
                 <div class="col-9 ps-3 admin-dash">
-                    <a href="#"><img src="assets/backbutton.png" alt="backbutton" class="pb-2" width="30.049px"
-                            height="24px"></a>
+                    <a href="#"><img class="pb-2 dashboard-button" src="assets/backbutton.png" alt="backbutton"></a>
                     Admin Dashboard
                 </div>
             </div>
