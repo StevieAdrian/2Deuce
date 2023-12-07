@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary pt-0">
     <div class="container-fluid pallete-maroon" style="background-color: #470000">
-        <a class="navbar-brand ps-4" href="{{ route('movie') }}"><img src="assets/Logo.png" alt="Logo"
+        <a class="navbar-brand ps-4" href="{{ route('movie') }}"><img src="/assets/Logo.png" alt="Logo"
                 style="width:157.897px;height: 40px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

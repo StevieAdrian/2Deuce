@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedInteger('FilmStatusID');
             $table->text('FilmSynopsis');
             $table->string('FilmWriter');
-            $table->string('FilmPoster');    
+            $table->string('FilmPoster');
             $table->timestamps();
 
             $table->foreign('MaturityRatingId')->references('id')->on('ms_maturityrating');

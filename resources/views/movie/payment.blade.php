@@ -5,7 +5,7 @@
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="{{asset('css/payment.css')}}">
-    
+
     <div class="container">
         <h1 class="title">Review Order</h1>
         <div class="movie">
@@ -13,7 +13,7 @@
 
             <div class="movie__info">
                 <div class="mt-3 movie__title">The Boy and The Heron</div>
-                
+
                 <div style="display: flex; align-items: center; margin-top: 10px;">
                     <img src="assets/timelogo.png" alt="timelogo" style="width: 20px; height:21px;">
                     <div class="ml-2" style="margin-left: 5px; font-size:20px;">124m</div>
@@ -49,17 +49,17 @@
 
         <div class="info">
             <div class="label">Ticket:</div>
-            <div class="price">Rp. xxx.xxx,xx</div> 
+            <div class="price">Rp. xxx.xxx,xx</div>
         </div>
 
         <div class="info">
             <div class="label">Admin Fees:</div>
-            <div class="price">Rp. x.xxx,xx</div> 
+            <div class="price">Rp. x.xxx,xx</div>
         </div>
 
         <div class="info total-info">
             <div class="label total-label">Payment Due:</div>
-            <div class="price total-price">Rp. xxx.xxx,xx</div> 
+            <div class="price total-price">Rp. xxx.xxx,xx</div>
         </div>
 
         <button type="submit" class="checkout__button btn btn-outline-warning" id="checkout__button" data-bs-toggle="modal" data-bs-target="#exampleModal">CHECKOUT</button>
@@ -72,13 +72,13 @@
                 <div class="modal_image">
                     <img src="assets/tick.png" alt="tick" class="mb-3 pt-5">
                 </div>
-                
+
                 <div class="modal_title payment-font mt-2">
                     Payment Succesfully!
                 </div>
-                
+
                 <div class="modal_text payment-font1 pt-2 pb-2">Your receipt has been sent to your email</div>
-                
+
                 <div class="modal_button nav-item mt-4">
                     <a class="nav-link border border-warning rounded-3 d-block px-4 py-2 modal_button_text" href="#"style="color: #D58936">
                         HOME
@@ -87,7 +87,7 @@
             </div>
     </div>
     </div>
-    
+
     <!--=============== BOOTSTRAP JS ===============-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 

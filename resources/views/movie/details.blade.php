@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('template.app')
+@section('content')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ asset('css/movieDetails.css') }}">
-</head>
-
-<body>
+    <link rel="stylesheet" href="{{asset('css/movieDetails.css')}}">
     <div class="container">
         <img src="{{ asset('poster/' . $movie->FilmPoster) }}" alt="{{ $movie->FilmName }}" class="image">
         <div class="desc">
@@ -38,9 +30,18 @@
             </a>
         </div>
         {{-- <img style="width: 50px; height:30px" class="ps-2" src="assets/r13.jpg" alt="r13"> --}}
+
+        <script>
+            function scrollToSection(sectionId) {
+                document.getElementById(sectionId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        </script>
     </div>
 
-    {{-- <p>Duration: {{ $movie->FilmDuration }} minutes</p> --}}
-</body>
 
-</html>
+    {{-- <p>Duration: {{ $movie->FilmDuration }} minutes</p> --}}
+
+@endsection
+

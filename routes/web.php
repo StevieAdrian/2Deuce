@@ -32,14 +32,14 @@ use App\Http\Controllers\BookingController;
 Route::get('/register', [UserController::class, 'register'])->name('register')->middleware('guest');
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::get('/home', [UserController::class, 'home'])->name('home')->middleware('auth');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::post('/register', [UserController::class, 'registerProcess'])->name('registerProcess');
 Route::post('/login', [UserController::class, 'loginProcess'])->name('loginProcess');
 Route::get('/logout', [UserController::class, 'logout'])->name('logoutProcess');
 
 
-Route::get('/movie', [MovieController::class,  'movie'])->name('movie');
+// Route::get('/movie', [MovieController::class,  'main'])->name('movie');
 
 
 Route::get('/', [MovieController::class,  'movie'])->name('movie');

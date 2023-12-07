@@ -22,9 +22,9 @@
                         <div class="mt-3">{{$movie->FilmName}}</div>
                     </div>
                     <div style="display: flex; align-items: center;">
-                        <img src="assets/timelogo.png" alt="timelogo">
+                        <img src="/assets/timelogo.png" alt="timelogo">
                         <div class="ml-2" style="margin-left: 5px;">124m</div>
-                        <img style="width: 50px; height:30px" class="ps-2" src="assets/r13.jpg" alt="r13">
+                        <img style="width: 50px; height:30px" class="ps-2" src="/assets/r13.jpg" alt="r13">
                     </div>
                 </a>
             </div>
@@ -70,7 +70,7 @@
                                             time{{$i}}{{$j}}{{$k}}.addEventListener("click", function() {
                                                 if(previousTime){
                                                     previousTime.classList.toggle("theater-card-selector");
-                                                    document.getElementById("seat__button").classList.toggle("btn-outline-secondary");   
+                                                    document.getElementById("seat__button").classList.toggle("btn-outline-secondary");
                                                     document.getElementById("seat__button").classList.toggle("btn-outline-warning");
                                                 }
                                                 time{{$i}}{{$j}}{{$k}}.classList.toggle("theater-card-selector");

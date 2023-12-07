@@ -10,7 +10,8 @@
 <body>
     <div class="main">
         <div class="titleInfo">
-            <div class = "theaterInfo">Theater Name | </div>
+
+            <div class="theaterInfo">tes</div>
             <div class = "dateInfo">Thursday, 30 November</div>
         </div>
 
@@ -20,7 +21,7 @@
                 {{-- @php
                     $seat = 'A'.$i;
                 @endphp --}}
-                {{-- {{$taken->SeatName}} --}}
+{{-- {{$taken->SeatName}} --}}
                 {{-- @if(isset($taken) && $taken === $seat)
                     <div class="seatTaken">{{ $seat }}</div>
                 @else
@@ -61,7 +62,7 @@
         <div class="row">
             @for ($i = 1; $i <= 17; $i++)
                 <div class="seat">H{{$i}}</div>
-            @endfor
+@endfor
         </div>
         <div class="row">
             <div class="lastSeat"></div>
@@ -83,11 +84,9 @@
             <input name="SeatName" style="display:none" />
             <div class="taken"><span id="price"></span></div>
             <input name="SubTotal" style="display:none" />
-            {{-- <a class="proc" href="{{route('movie')}}"> --}}
-                <button class="proc">
+            <a class="proc" href="{{route('payment')}}">
                     CHOOSE SEAT
-                </button>
-            {{-- </a> --}}
+            </a>
         </form>
     </div>
     <script src="{{ asset('js/seat.js') }}"></script>

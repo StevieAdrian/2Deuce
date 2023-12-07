@@ -1,6 +1,6 @@
 <footer>
     <div class="ps-5 pt-5" style="background-color: #470000">
-        <img src=assets/Logo.png alt="Logo" style="width:200px;height: 60px;">
+        <img src=/assets/Logo.png alt="Logo" style="width:200px;height: 60px;">
 
     </div>
     <div class="d-flex justify-content-center">
@@ -20,10 +20,10 @@
         <div class="w-30 pt-3 pallete-maroon">
             <div class="follow-button">FOLLOW US</div>
             <div class="d-flex justify-content-start ">
-                <div class="insta-size ps-0"><img src=assets/insta.png alt="insta"></div>
-                <div class="twitter-size ps-4"><img src=assets/twitter.png alt="twitter"></div>
-                <div class="youtube-size ps-3 ms-4"><img src=assets/youtube.png alt="youtube"></div>
-                <div class="facebook-size ps-4 ms-3"><img src=assets/facebook.png alt="facebook"></div>
+                <div class="insta-size ps-0"><img src=/assets/insta.png alt="insta"></div>
+                <div class="twitter-size ps-4"><img src=/assets/twitter.png alt="twitter"></div>
+                <div class="youtube-size ps-3 ms-4"><img src=/assets/youtube.png alt="youtube"></div>
+                <div class="facebook-size ps-4 ms-3"><img src=/assets/facebook.png alt="facebook"></div>
             </div>
         </div>
     </div>

@@ -17,9 +17,12 @@ class Theaters extends Model
         'Address',
     ];
 
-    public function studio()
-    {
-        return $this->hasMany('App\Models\Studio','TheaterId','id');
+    public function studio() {
+        return $this->hasMany('App\Models\Studio');
+    }
+
+    public function seats() {
+        return $this->hasMany('App\Models\Seats');
     }
 
 }

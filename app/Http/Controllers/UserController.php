@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Seats;
 
 class UserController extends Controller
 {
@@ -41,10 +42,14 @@ class UserController extends Controller
             'password' => $request->password])
         ){
             $request->session()->regenerate();
-            // dd($request);
-            // var_dump($request);
-            return redirect()->route('movie');
+            // // dd($request);
+            // // var_dump($request);
+            if($request->email === 'admin@gmail.com' && $request->password === 'admin') {
+                return redirect()->route('dashboard');
+            } else {
+            }
         }
+        return redirect()->route('main2');
     }
 
     public function logout(Request $request)

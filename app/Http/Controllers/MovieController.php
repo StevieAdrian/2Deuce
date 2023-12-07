@@ -29,16 +29,19 @@ class MovieController extends Controller
 
     public function dashboard()
     {
+        $movies = Films::all();
         return view('movie.dashboard');
     }
 
     public function dashboardbook()
     {
+        $movies = Films::all();
         return view('movie.dashboardbook');
     }
 
     public function dashboardtheaters()
     {
+        $movies = Films::all();
         return view('movie.dashboardtheaters');
     }
 
