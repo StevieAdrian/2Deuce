@@ -14,6 +14,12 @@ class MovieController extends Controller
         return view('movie.main', compact('movies'));
     }
 
+    public function main2()
+    {
+        $movies = Films::all();
+        return view('movie.main2', compact('movies'));
+    }
+
     public function payment()
     {
         return view('movie.payment');

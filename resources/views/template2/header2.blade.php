@@ -22,8 +22,8 @@
                     <a class="nav-link white" href="#" onclick="scrollToSection('upcoming')">UPCOMING</a>
                 </li>
                 <li class="nav-item pt-4 pb-4 pe-4">
-                    <a class="nav-link border b-orange rounded-3 orange" href="{{ route('login') }}">
-                        LOGIN
+                    <a class="nav-link border b-orange rounded-3 orange" href="{{ route('logoutProcess') }}">
+                        LOGOUT
                     </a>
                 </li>
             </ul>

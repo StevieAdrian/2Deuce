@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto" style="background-color: #470000">
+            <ul class="navbar-nav ml-auto pallete-black">
                 <li class="nav-item pe-3 pt-4 pb-3 admin-nav">
                     <a class="nav-link white" href="#">HOME</a>
                 </li>
@@ -27,14 +27,23 @@
                             <div class="dropdown">
                                 <li class="nav-item  me-5 pe-5 pt-4 pb-0 dropdown admin-nav" id="adminUserDropdown">
                                     <a class="nav-link dropdown-toggle orange" href="#" id="navbarDropdown"
-                                        role="button" aria-haspopup="true" aria-expanded="false">
+                                        role="button" aria-haspopup="true" aria-expanded="false"
+                                        data-bs-toggle="dropdown">
                                         Admin_User
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="#">Option 1</a>
-                                        <a class="dropdown-item" href="#">Option 2</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Separated link</a>
+                                    <div class="dropdown-menu pallete-black" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item white d-flex justify-content-start align-items-center"
+                                            href="#">
+                                            <img class="mr-2 dashboard-size" style="width: " src="assets/dashboard.png"
+                                                alt="dashboard">
+                                            <span>Admin Dashboard</span>
+                                        </a>
+                                        <hr class="dropdown-divider w-75 mx-0 my-1">
+                                        <a class="dropdown-item white d-flex justify-content-start align-items-center"
+                                            href="#">
+                                            <img class="mr-2" src="assets/logout.png" alt="logout">
+                                            <span>Logout</span>
+                                        </a>
                                     </div>
                                 </li>
                             </div>

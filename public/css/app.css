@@ -6,6 +6,10 @@
     width: 70%;
 }
 
+.w-75 {
+    width: 75%;
+}
+
 .w-78{
     width: 78%;
 }
@@ -22,14 +26,20 @@
     padding-bottom: 0!important;
 }
 
-.carousel-inner img {
-    width: 50%; 
-    margin: 0 auto; 
+.carousel-inner .carousel-item img {
+    width: 700px; 
+    height: 370px; 
+    object-fit: cover; 
 }
 
 .logo-button {
     width: 490px;
     height: 145px;
+}
+
+a {
+    color: inherit; 
+    text-decoration: none; 
 }
 
 .footer-button{
@@ -142,6 +152,11 @@ footer {
 
 .admin-dash{
     font-size: 40px;
+}
+
+.dashboard-size{
+    height: 24px;
+    width: 24px;
 }
 
 .pallete-maroon{

@@ -28,6 +28,7 @@ Route::get('/logout', [UserController::class, 'logout'])->name('logoutProcess');
 
 Route::get('/', [MovieController::class,  'movie'])->name('movie');
 Route::get('/main', [MovieController::class,  'main'])->name('main');
+Route::get('/main2', [MovieController::class,  'main2'])->name('main2');
 Route::get('/payment', [MovieController::class, 'payment'])->name('payment');
 Route::get('/dashboard', [MovieController::class, 'dashboard'])->name('dashboard');
 Route::get('/dashboardbook', [MovieController::class, 'dashboardbook'])->name('dashboardbook');
