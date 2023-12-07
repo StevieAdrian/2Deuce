@@ -13,17 +13,22 @@ class Studio extends Model
 
     protected $fillable = [
     'StudioName',  
-    'TheaterID', 
+    'TheaterId', 
     ];
 
     public function theater()
     {
-        return $this->belongsTo('App\Models\Theaters','TheaterID');
+        return $this->belongsTo('App\Models\Theaters','TheaterId','id');
     }
 
     public function schedule()
     {
         return $this->hasMany('App\Models\Schedule');
+    }
+
+    public function seat()
+    {
+        return $this->hasMany('App\Models\Seats');
     }
 
 }

@@ -18,8 +18,8 @@
                 <a href="#" class="text-center text-white"
                     style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
                     <div style="margin-bottom: 10px;">
-                        <img src="assets/upcoming1.png" alt="upcoming1" class="img-fluid">
-                        <div class="mt-3">The Boy and The Heron</div>
+                        <img src={{ asset('poster/' .$movie->FilmPoster) }} alt="upcoming1" class="img-fluid">
+                        <div class="mt-3">{{$movie->FilmName}}</div>
                     </div>
                     <div style="display: flex; align-items: center;">
                         <img src="assets/timelogo.png" alt="timelogo">

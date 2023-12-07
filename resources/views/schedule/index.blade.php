@@ -44,21 +44,17 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($schedule   as $schedule)
+                @foreach($schedule as $schedule)
                     <tr>
                         <td>{{ $schedule->id }}</td>
                         <td>{{ $schedule->ScheduleDate }}</td>
                         <td>{{ $schedule->ScheduleStart }}</td>
                         <td>{{ $schedule->ScheduleEnd }}</td>
-                        <td>{{ $schedule->film->title }}</td>
-                        <td>{{ $schedule->studio->name }}</td>
+                        <td>{{ $schedule->films->FilmName }}</td>
+                        <td>{{ $schedule->studio->StudioName }}</td>
                         <td>
-                            <a href="{{ route('schedule.edit', $schedule->id) }}" class="btn btn-primary">Edit</a>
-                            <form action="{{ route('schedule.destroy', $schedule->id) }}" method="POST" style="display:inline">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this schedule?')">Delete</button>
-                            </form>
+                                <a href="Schedule/{{ $schedule->id }}/edit" class="btn btn-dark  btn-sm">Edit</a>
+                                <a href="Schedule/{{ $schedule->id }}/delete" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
                 @endforeach

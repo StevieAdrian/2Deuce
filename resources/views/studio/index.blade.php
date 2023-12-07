@@ -42,7 +42,7 @@
               <tr>
                 <td>{{ $loop->index+1 }}</td>
                 <td>{{ $ms_studio->StudioName }}</td>
-                <td>{{ $ms_studio->theater->TheaterName }}</td>
+                <td>{{ $ms_studio->theater->Name }}</td>
                 <td>
                     <a href="Studio/{{ $ms_studio->id }}/edit" class="btn btn-dark  btn-sm">Edit</a>
                     <a href="Studio/{{ $ms_studio->id }}/delete" class="btn btn-danger btn-sm">Delete</a>

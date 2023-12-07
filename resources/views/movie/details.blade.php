@@ -33,7 +33,7 @@
                     Synopsis : {{ $movie->FilmSynopsis }}
                 </div>
             </div>
-            <a class="proc" href="{{ route('seats.theaterSeat') }}">
+            <a class="proc" href="{{route('schedule',['id' => $movie->id])}}">
                 BUY A TICKET
             </a>
         </div>

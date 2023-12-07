@@ -16,7 +16,7 @@ use App\Http\Controllers\BookingStatusController;
 use App\Http\Controllers\StudioController;
 
 use App\Http\Controllers\ScheduleController;
-
+use App\Http\Controllers\BookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,7 +51,7 @@ Route::get('/dashboardbook', [MovieController::class, 'dashboardbook'])->name('d
 Route::get('/dashboardtheaters', [MovieController::class, 'dashboardtheaters'])->name('dashboardtheaters');
 Route::get('/dashboardfilms', [MovieController::class, 'dashboardfilms'])->name('dashboardfilms');
 Route::get('/details/{id}', [MovieController::class, 'details'])->name('details');
-Route::get('/schedule', [MovieController::class, 'schedule'])->name('schedule');
+Route::get('/schedule/{id}', [MovieController::class, 'schedule'])->name('schedule');
 
 Route::get('/films', [FilmsController::class, 'index'])->name('films.index');
 Route::get('/films/create', [FilmsController::class, 'create'])->name('films.create');
@@ -106,4 +106,14 @@ Route::put('/Schedule/{id}/update', [ScheduleController::class, 'update']);
 Route::get('/Schedule/{id}/delete', [ScheduleController::class, 'delete']);
 
 
-Route::get('/FilmStatus/{id}/delete', [FilmStatusController::class, 'destroy']);
+
+Route::get('/FilmStatus/{id}/delete', [FilmStatusController::class,'destroy']);
+
+
+Route::get('/Booking', [BookingController::class,'index'])->name('book.index');
+Route::get('/Booking/create', [BookingController::class,'create'])->name('book.create');
+Route::post('/Booking/store', [BookingController::class,'store'])->name('book.store');
+Route::get('/Booking/{id}/edit', [BookingController::class,'edit']);
+Route::put('/Booking/{id}/update', [BookingController::class,'update']);
+Route::get('/Booking/{id}/delete', [BookingController::class,'delete']);
+
