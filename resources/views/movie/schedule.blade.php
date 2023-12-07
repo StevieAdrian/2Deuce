@@ -34,14 +34,14 @@
             <h1 class="schedule__title">Schedule</h1>
 
             <div class="schedule__nav">
-                @for ($i = 0; $i < 10; $i++)
-                    <div class="schedule-card" id="schedule{{ $i }}">
+                @foreach ($schedule as $schedule)
+                    <div class="schedule-card" id="schedule{{ $schedule->id }}">
                         <div class="schedule-card-body">
-                            <h2 class="schedule-card-title">{{$i}} NOV</h2>
-                            <p class="schedule-card-text">WEDNESDAY</p>
+                            <h2 class="schedule-card-title">{{ \Carbon\Carbon::parse($schedule->ScheduleDate)->format('d M Y') }}</h2>
+                            <p class="schedule-card-text">{{ \Carbon\Carbon::parse($schedule->ScheduleDate)->format('l') }}</p>
                         </div>
                     </div>
-                @endfor
+                @endforeach
             </div>
 
             <div class="theater__nav">
