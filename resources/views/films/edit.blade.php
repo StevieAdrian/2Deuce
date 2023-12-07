@@ -52,7 +52,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="MaturityRating" class="form-label">Maturity Rating</label>
-                            <input type="text" class="form-control" id="MaturityRating" name="MaturityRating" value="{{ old('MaturityRating',$films->MaturityRatingId) }}">
+                            <select name="MaturityRating" class="custom-select">
+                                @foreach($maturity as $mt)
+                                    <option value="{{ $mt->id }}">{{ $mt->MaturityRating}}</option>
+                                @endforeach
+                            </select>
                             @if($errors->has('MaturityRating'))   
                                 <span class="text-danger">{{ $errors->first('MaturityRating') }}</span>
                             @endif
@@ -66,7 +70,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="FilmStatusId" class="form-label">Film Status Id</label>
-                            <input type="text" class="form-control" id="FilmStatusId" name="FilmStatusId" value="{{ old('FilmStatusId',$films->FilmStatusID) }}">
+                            <select name="FilmStatusId" class="custom-select">
+                                @foreach($filmstatus as $fs)
+                                    <option value="{{ $fs->id }}">{{ $fs->Filmstatus}}</option>
+                                @endforeach
+                            </select>
                             @if($errors->has('FilmStatusId'))   
                                 <span class="text-danger">{{ $errors->first('FilmStatusId') }}</span>
                             @endif

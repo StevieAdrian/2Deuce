@@ -11,12 +11,12 @@
 <body>
     <nav class="navbar navbar-expand-sm bg-dark">
         <div class="container-fluid">
-        <!-- Links -->
-        <ul class="navbar-nav">
+          <!-- Links -->
+          <ul class="navbar-nav">
             <li class="nav-item">
-            <a class="nav-link text-light" href="#">Your Brand</a>
+              <a class="nav-link text-light" href="#">Your Brand</a>
             </li>
-        </ul>
+          </ul>
         </div>
     </nav>
 
@@ -28,33 +28,38 @@
 
     <div class="container">
         <div class="d-flex justify-content-end">
-            <a href="theaters/createTheaters" class="btn btn-dark mt-2">New Theaters</a>
+            <a href="{{ route('schedule.create') }}" class="btn btn-dark mt-2">New Schedule</a>
         </div>
-        <h1>Theater List</h1>
+        <h1>Schedule List</h1>
         <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>NumberOfStudios</th>
-                    <th>Address</th>
+                    <th>Schedule Date</th>
+                    <th>Schedule Start</th>
+                    <th>Schedule End</th>
+                    <th>Film</th>
+                    <th>Studio</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($theaters as $theaters)
+                @foreach($schedule   as $schedule)
                     <tr>
-                        <td>{{ $theaters->id }}</td>
-                        <td>{{ $theaters->Name }}</td>
-                        <td>{{ $theaters->NumberOfStudios }}</td>
-                        <td>{{ $theaters->Address }}</td>
-                        {{-- <td>
+                        <td>{{ $schedule->id }}</td>
+                        <td>{{ $schedule->ScheduleDate }}</td>
+                        <td>{{ $schedule->ScheduleStart }}</td>
+                        <td>{{ $schedule->ScheduleEnd }}</td>
+                        <td>{{ $schedule->film->title }}</td>
+                        <td>{{ $schedule->studio->name }}</td>
+                        <td>
                             <a href="{{ route('schedule.edit', $schedule->id) }}" class="btn btn-primary">Edit</a>
                             <form action="{{ route('schedule.destroy', $schedule->id) }}" method="POST" style="display:inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this schedule?')">Delete</button>
                             </form>
-                        </td> --}}
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

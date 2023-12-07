@@ -104,16 +104,26 @@ body{
     height: 24.5rem;
 }
 
+#seatImg{
+    margin-right: 5px;
+}
+
 .affirm{
     margin-top: 11rem;
     margin-left: 40px;
     font-size: 20px;
+    font-weight: bold;
+}
+
+#subTotal{
+    margin-right: 5px;
 }
 
 .totalAffirm{
     margin-top: 8.5rem;
     margin-left: 40px;
     font-size: 20px;
+    font-weight: bold;
 }
 
 .selectedSeats {
@@ -130,4 +140,31 @@ body{
     margin-left: 40px;
     font-size: 18px;
     color: #D58936;
+}
+
+.seatTaken{
+    background-color: red;
+    color:white
+}
+
+.proc{
+    margin-top: 120px;
+    margin-left: 80px;
+    padding: 10px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #D58936;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #D58936;
+    border-radius: 7px;
+    text-decoration: none;
+    background-color: #1B1919;
+}
+
+.proc:hover{
+    background-color: #D58936;
+    color:#1B1919
 }

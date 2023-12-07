@@ -1,6 +1,8 @@
 const container = document.querySelector(".main");
 const takenContainer = document.querySelector(".taken");
+const inputContainer = document.querySelector("input[name='SeatName']");
 const priceContainer = document.getElementById("price");
+const inputPriceContainer = document.querySelector("input[name='SubTotal']");
 
 const selectedSeats = [];
 let count = 0;
@@ -30,9 +32,12 @@ container.addEventListener("click", (e) => {
 function seatChosenIdx(){
     const seatsText = selectedSeats.length > 0 ? selectedSeats.join(" ") : "";
     takenContainer.textContent = seatsText;
+    inputContainer.value = seatsText;
 }
+
 
 function totalPrice(){
     const priceSub = price === 0 ? price(" ") : "";
     priceContainer.textContent = count.toLocaleString();
+    inputPriceContainer.value = count.toLocaleString();
 }

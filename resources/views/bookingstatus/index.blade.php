@@ -24,26 +24,26 @@
     </nav>
     <div class="container">
         <div class="d-flex justify-content-end">
-            <a href="{{ route('maturity.create') }}" class="btn btn-dark mt-2">New Maturity Rating</a>
+            <a href="BookingStatus/create" class="btn btn-dark mt-2">New Booking Status</a>
         </div>
 
 
         <table class="table table-hover mt-2">
             <thead>
               <tr>
-                <th>Film Maturity Rating Id</th>
-                <th>Film Maturity Rating</th>
+                <th>Booking Status Id</th>
+                <th>Booking Status</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-                @foreach ($maturity as $ms_maturityrating)
+                @foreach ($bookstatus as $ms_bookingstatus)
               <tr>
                 <td>{{ $loop->index+1 }}</td>
-                <td>{{ $ms_maturityrating->MaturityRating }}</td>
+                <td>{{ $ms_bookingstatus->BookingStatus }}</td>
                 <td>
-                    <a href="MaturityRating/{{ $ms_maturityrating->id }}/edit" class="btn btn-dark  btn-sm">Edit</a>
-                    <a href="MaturityRating/{{ $ms_maturityrating->id }}/delete" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="BookingStatus/{{ $ms_bookingstatus->id }}/edit" class="btn btn-dark  btn-sm">Edit</a>
+                    <a href="BookingStatus/{{ $ms_bookingstatus->id }}/delete" class="btn btn-danger btn-sm">Delete</a>
                 </td>
               </tr>
               @endforeach

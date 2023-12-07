@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('FilmStatusID');
             $table->text('FilmSynopsis');
             $table->string('FilmWriter');
-            $table->string('FilmPoster');    
+            $table->string('FilmPoster');
             $table->timestamps();
         });
     }

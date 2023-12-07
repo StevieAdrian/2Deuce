@@ -21,4 +21,19 @@ class Films extends Model
     'FilmWriter', 
     'FilmPoster
     '];
+
+    public function maturityRating()
+    {
+        return $this->belongsTo('App\Models\MaturityRating','MaturityRatingId');
+    }
+
+    public function filmStatus()
+    {
+        return $this->belongsTo('App\Models\FilmStatus','FilmStatusID');
+    }
+
+    public function schedule()
+    {
+        return $this->hasMany('App\Models\Schedule');
+    }
 }

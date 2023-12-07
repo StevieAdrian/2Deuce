@@ -36,7 +36,6 @@ class UserController extends Controller
     }
 
     public function loginProcess(Request $request){
-
         if(Auth::attempt(
             ['email' => $request->email,
             'password' => $request->password])
@@ -46,7 +45,6 @@ class UserController extends Controller
             // var_dump($request);
             return redirect()->route('movie');
         }
-
     }
 
     public function logout(Request $request)

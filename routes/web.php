@@ -3,9 +3,20 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FilmsController;
+
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\TheatersController;
 use App\Http\Controllers\TheaterSeatController;
+
+use App\Http\Controllers\FilmStatusController;
+use App\Http\Controllers\MaturityRatingController;
+
+use App\Http\Controllers\BookingStatusController;
+
+use App\Http\Controllers\StudioController;
+
+use App\Http\Controllers\ScheduleController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +38,10 @@ Route::post('/register', [UserController::class, 'registerProcess'])->name('regi
 Route::post('/login', [UserController::class, 'loginProcess'])->name('loginProcess');
 Route::get('/logout', [UserController::class, 'logout'])->name('logoutProcess');
 
+
+Route::get('/movie', [MovieController::class,  'movie'])->name('movie');
+
+
 Route::get('/', [MovieController::class,  'movie'])->name('movie');
 Route::get('/main', [MovieController::class,  'main'])->name('main');
 Route::get('/main2', [MovieController::class,  'main2'])->name('main2');
@@ -36,6 +51,7 @@ Route::get('/dashboardbook', [MovieController::class, 'dashboardbook'])->name('d
 Route::get('/dashboardtheaters', [MovieController::class, 'dashboardtheaters'])->name('dashboardtheaters');
 Route::get('/dashboardfilms', [MovieController::class, 'dashboardfilms'])->name('dashboardfilms');
 Route::get('/details/{id}', [MovieController::class, 'details'])->name('details');
+Route::get('/schedule', [MovieController::class, 'schedule'])->name('schedule');
 
 Route::get('/films', [FilmsController::class, 'index'])->name('films.index');
 Route::get('/films/create', [FilmsController::class, 'create'])->name('films.create');
@@ -46,6 +62,7 @@ Route::get('/theaters/createTheaters', [TheatersController::class, 'create'])->n
 Route::post('/theaters/store', [TheatersController::class, 'store'])->name('theaters.store');
 
 Route::get('/seats', [TheaterSeatController::class, 'seats'])->name('seats.theaterSeat');
+Route::post('/seats', [TheaterSeatController::class, 'saveSeats'])->name('save.seats');
 Route::get('/films/{id}/edit', [FilmsController::class, 'edit']);
 Route::put('/films/{id}/update', [FilmsController::class, 'update']);
 Route::get('/films/{id}/delete', [FilmsController::class, 'destroy']);
@@ -62,4 +79,31 @@ Route::get('/FilmStatus/create', [FilmStatusController::class, 'create'])->name(
 Route::post('/FilmStatus/store', [FilmStatusController::class, 'store'])->name('filmstatus.store');
 Route::get('/FilmStatus/{id}/edit', [FilmStatusController::class, 'edit']);
 Route::put('/FilmStatus/{id}/update', [FilmStatusController::class, 'update']);
+
+Route::get('/FilmStatus/{id}/delete', [FilmStatusController::class, 'destroy']);
+
+Route::get('/FilmStatus/{id}/delete', [FilmStatusController::class, 'destroy']);
+
+Route::get('/BookingStatus', [BookingStatusController::class, 'index'])->name('bookingstatus.index');
+Route::get('/BookingStatus/create', [BookingStatusController::class, 'create'])->name('bookingstatus.create');
+Route::post('/BookingStatus/store', [BookingStatusController::class, 'store'])->name('bookingstatus.store');
+Route::get('/BookingStatus/{id}/edit', [BookingStatusController::class, 'edit']);
+Route::put('/BookingStatus/{id}/update', [BookingStatusController::class, 'update']);
+Route::get('/BookingStatus/{id}/delete', [BookingStatusController::class, 'destroy']);
+
+Route::get('/Studio', [StudioController::class, 'index'])->name('studio.index');
+Route::get('/Studio/create', [StudioController::class, 'create'])->name('studio.create');
+Route::post('/Studio/store', [StudioController::class, 'store'])->name('studio.store');
+Route::get('/Studio/{id}/edit', [StudioController::class, 'edit']);
+Route::put('/Studio/{id}/update', [StudioController::class, 'update']);
+Route::get('/Studio/{id}//delete', [StudioController::class, 'delete']);
+
+Route::get('/Schedule', [ScheduleController::class, 'index'])->name('schedule.index');
+Route::get('/Schedule/create', [ScheduleController::class, 'create'])->name('schedule.create');
+Route::post('/Schedule/store', [ScheduleController::class, 'store'])->name('schedule.store');
+Route::get('/Schedule/{id}/edit', [ScheduleController::class, 'edit']);
+Route::put('/Schedule/{id}/update', [ScheduleController::class, 'update']);
+Route::get('/Schedule/{id}/delete', [ScheduleController::class, 'delete']);
+
+
 Route::get('/FilmStatus/{id}/delete', [FilmStatusController::class, 'destroy']);

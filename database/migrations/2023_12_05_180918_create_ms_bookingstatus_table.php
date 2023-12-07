@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ms_theaters', function (Blueprint $table) {
+        Schema::create('ms_bookingstatus', function (Blueprint $table) {
             $table->id();
-            $table->string('TheaterID');
-            $table->string('Name');
-            $table->integer('NumberOfStudios');
-            $table->string('Address');
+            $table->string('BookingStatus');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ms_theaters');
+        Schema::dropIfExists('ms_bookingstatus');
     }
 };

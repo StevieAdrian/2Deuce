@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\FilmStatus;
 
 class FilmStatusController extends Controller
 {
@@ -11,7 +12,9 @@ class FilmStatusController extends Controller
      */
     public function index()
     {
-        //
+        return view('filmstatus.index',[
+            'filmstatus' => FilmStatus::get()
+        ]);
     }
 
     /**
@@ -19,7 +22,7 @@ class FilmStatusController extends Controller
      */
     public function create()
     {
-        //
+        return view('filmstatus.create');
     }
 
     /**
@@ -27,7 +30,15 @@ class FilmStatusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'Filmstatus' => 'required|string',
+        ]);
+
+        $ms_filmstatus = new FilmStatus();
+        $ms_filmstatus->Filmstatus = $request->Filmstatus;
+        $ms_filmstatus->save();
+
+        return back()->withSuccess('New Film Status created successfully');
     }
 
     /**
@@ -43,7 +54,9 @@ class FilmStatusController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $ms_filmstatus = FilmStatus::where('id',$id)->first();
+
+        return view('filmstatus.edit', ['filmstatus' => $ms_filmstatus]);
     }
 
     /**
@@ -51,7 +64,16 @@ class FilmStatusController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'Filmstatus' => 'required|string',
+        ]);
+        $ms_filmstatus = FilmStatus::where('id',$id)->first();
+        
+        $ms_filmstatus->Filmstatus = $request->Filmstatus;
+
+        $ms_filmstatus->save();
+
+        return back()->withSuccess('New Film Status updated successfully');
     }
 
     /**
@@ -59,6 +81,8 @@ class FilmStatusController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       $ms_filmstatus=FilmStatus::where('id', $id)->first();
+       $ms_filmstatus->delete();
+       return back()->withSuccess('Film Status Delete Success');
     }
 }

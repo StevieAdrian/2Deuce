@@ -1,0 +1,193 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+body {
+    height: 100vh;
+    background: #1b1919;
+}
+
+.container {
+    max-width: 100%;
+    display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 26px;
+    font-family: "Poppins", sans-serif;
+}
+  
+.movie {
+    width: 30%;
+    justify-content: center;
+    padding-right: 35px;
+}
+  
+.schedule {
+    width: 70%;
+    padding-left: 30px;
+    border-left: 1px rgba(255, 255, 255, 0.50) solid;
+}
+
+.schedule__title{
+    font-size: 36px; 
+    font-weight: 400;
+    text-align: start;
+    color: white;
+}
+
+.schedule__nav{
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    color: white;
+    cursor: default;
+}
+
+.schedule__nav::-webkit-scrollbar {
+    width: 5px;
+}
+  
+.schedule__nav::-webkit-scrollbar-track {
+    display: none;
+}
+  
+
+.schedule__nav::-webkit-scrollbar-thumb {
+    border: 5px solid transparent;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 255, 0.40);;
+    background-clip: content-box;
+}
+
+.selector{
+    border: 1px #D58936 solid!important;
+}
+
+.schedule-card{
+    height: 55px;
+    width: 105px;
+    display: inline-block;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 12px;
+    margin-right: 12px;
+    background: #1b1919;
+    color: white;
+    border: 1.5px rgba(255, 255, 255, 0.50) solid;
+    border-radius: 5px;
+}
+
+.schedule-card-body{
+    padding: 5px;
+}
+
+.schedule-card-title{
+    font-size: 13px;
+    margin-bottom: 0px;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.schedule-card-text{
+    font-size: 15px;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.theater__nav{
+    padding-top: 17px;
+    padding-bottom: 47px;
+}
+
+.page{
+    display: none;
+    overflow-y: auto;
+}
+
+.theater{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1.5px rgba(255, 255, 255, 0.50) solid;
+}
+
+.theater-body{
+    display: flex;
+    color: white;
+}
+
+.theater__name{
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.theater__address{
+    text-align: start;
+    color: white;
+    font-size: 10px;
+}
+
+.theater-time{
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    color: white;
+    cursor: default;
+}
+
+.theater-time::-webkit-scrollbar {
+    width: 5px;
+}
+  
+.theater-time::-webkit-scrollbar-track {
+    display: none;
+}
+  
+
+.theater-time::-webkit-scrollbar-thumb {
+    border: 5px solid transparent;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 255, 0.40);;
+    background-clip: content-box;
+}
+
+.theater-card{
+    height: 31px;
+    width: 60px;
+    display: inline-block;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 12px;
+    margin-right: 12px;
+    background: #565656;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.theater-card-selector{
+    background: #D58936;;
+}
+
+.theater-card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.theater-card-title{
+    color: #1B1919;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.seat__button{
+    float: right;
+    margin-bottom: 47px;
+    width: 191px;
+    height: 54px;
+    font-size: 20px;
+    font-weight: 590;
+}
