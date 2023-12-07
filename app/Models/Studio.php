@@ -26,4 +26,9 @@ class Studio extends Model
         return $this->hasMany('App\Models\Schedule');
     }
 
+    public function seat()
+    {
+        return $this->hasMany('App\Models\Seats');
+    }
+
 }

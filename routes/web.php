@@ -16,7 +16,7 @@ use App\Http\Controllers\BookingStatusController;
 use App\Http\Controllers\StudioController;
 
 use App\Http\Controllers\ScheduleController;
-
+use App\Http\Controllers\BookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,3 +101,11 @@ Route::get('/Schedule/{id}/delete', [ScheduleController::class,'delete']);
 
 
 Route::get('/FilmStatus/{id}/delete', [FilmStatusController::class,'destroy']);
+
+
+Route::get('/Booking', [BookingController::class,'index'])->name('book.index');
+Route::get('/Booking/create', [BookingController::class,'create'])->name('book.create');
+Route::post('/Booking/store', [BookingController::class,'store'])->name('book.store');
+Route::get('/Booking/{id}/edit', [BookingController::class,'edit']);
+Route::put('/Booking/{id}/update', [BookingController::class,'update']);
+Route::get('/Booking/{id}/delete', [BookingController::class,'delete']);

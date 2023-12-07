@@ -13,4 +13,9 @@ class BookingStatus extends Model
 
     protected $fillable = ['BookingStatus'];
 
+    public function booking()
+    {
+        return $this->hasMany('App\Models\Booking');
+    }
+
 }
