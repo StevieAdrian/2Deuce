@@ -1,0 +1,5 @@
+@include('template2.doc')
+@include('template2.header2')
+@yield('content')
+@include('template2.footer')
+@include('template2.closer')

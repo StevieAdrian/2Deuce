@@ -4,7 +4,8 @@
         <div class="container">
             <div class="d-flex justify-content-start align-items-center">
                 <div class="col-9 ps-3 admin-dash">
-                    <a href="#"><img class="pb-2 dashboard-button" src="assets/backbutton.png" alt="backbutton"></a>
+                    <a href="#"><img src="assets/backbutton.png" alt="backbutton" class="pb-2" width="30.049px"
+                            height="24px"></a>
                     Admin Dashboard
                 </div>
             </div>
@@ -12,13 +13,13 @@
             <div class="container">
                 <div class="d-flex">
                     <div class="flex-fill rounded-start border left-box">
-                        <div class="ps-4 pt-4 orange">
-                            <img src="assets/users.png" alt="users">
+                        <div class="ps-4 pt-4">
+                            <img src="assets/users1.png" alt="users1">
                             Users
                             <hr class="w-80">
                         </div>
-                        <div class="ps-4 pt-2">
-                            <img src="assets/book1.png" alt="book1">
+                        <div class="ps-4 pt-2 orange">
+                            <img src="assets/book.png" alt="book">
                             Booking
                             <hr class="w-80">
                         </div>
@@ -35,11 +36,11 @@
 
                     <div class="flex-fill rounded-end border right-box ps-3 pt-3" style="font-size: 36px;">
                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex justify-content-start">Users</div>
+                            <div class="d-flex justify-content-start">Films</div>
                             <div class="pe-4 pt-3" style="font-size: 14px;">
                                 <div class="border rounded-3 px-3 py-2 d-flex align-items-center justify-content-end">
                                     <img src="assets/plus.png" alt="plus" style="width: 20px; height: 20px;">
-                                    <span class="ms-2">Add User</span>
+                                    <span class="ms-2">Add Film</span>
                                 </div>
                             </div>
                         </div>
@@ -50,45 +51,51 @@
                                     <thead>
                                         <hr class="hr-set">
                                         <tr>
-                                            <th scope="col">User ID</th>
-                                            <th scope="col">Username</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Phone</th>
-                                            <th scope="col">Status</th>
+                                            <th scope="col">FilmID</th>
+                                            <th scope="col">Title</th>
+                                            <th scope="col">Duration</th>
+                                            <th scope="col">AgeRating</th>
+                                            <th scope="col">Film Poster</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>#0001</td>
-                                            <td>John Doe</td>
-                                            <td>JohnDoe@gmail.com</td>
-                                            <td>+6293021235</td>
-                                            <td>Active</td>
+                                            <td>A13948</td>
+                                            <td>Wish</td>
+                                            <td>100Minutes</td>
+                                            <td>R13+</td>
+                                            <td>Wish Poster</td>
                                             <td>
+                                                <img src="assets/3dot.png" alt="3dot">
                                                 <img src="assets/pen.png" alt="pen">
+                                                <img src="assets/timer.png" alt="timer">
                                                 <img src="assets/trash.png" alt="trash">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>#0002</td>
-                                            <td>John Doe</td>
-                                            <td>JohnDoe@gmail.com</td>
-                                            <td>+6293021235</td>
-                                            <td>Active</td>
+                                            <td>A12464</td>
+                                            <td>Hunger Games</td>
+                                            <td>120Minutes</td>
+                                            <td>R17+</td>
+                                            <td>Hunger Games Poster</td>
                                             <td>
+                                                <img src="assets/3dot.png" alt="3dot">
                                                 <img src="assets/pen.png" alt="pen">
+                                                <img src="assets/timer.png" alt="timer">
                                                 <img src="assets/trash.png" alt="trash">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>#0003</td>
-                                            <td>John Doe</td>
-                                            <td>JohnDoe@gmail.com</td>
-                                            <td>+6293021235</td>
-                                            <td>Active</td>
+                                            <td>A13156</td>
+                                            <td>Willy Wonka</td>
+                                            <td>90Minutes</td>
+                                            <td>R7+</td>
+                                            <td>Willy Wonka Poster</td>
                                             <td>
+                                                <img src="assets/3dot.png" alt="3dot">
                                                 <img src="assets/pen.png" alt="pen">
+                                                <img src="assets/timer.png" alt="timer">
                                                 <img src="assets/trash.png" alt="trash">
                                             </td>
                                         </tr>
@@ -101,6 +108,7 @@
             </div>
         </div>
     </div>
+
 
 
     @if (false)

@@ -1,4 +1,4 @@
-@extends('template.app')
+@extends('template2.app')
 @section('content')
     <div class="d-flex justify-content-center pallete-black">
         <div id="carouselExample" class="carousel slide pt-2 pb-3">
@@ -60,33 +60,51 @@
         <div id="now-showing" class="ms-4">NOW SHOWING</div>
     </div>
 
-    <div class="d-flex justify-content-center pt-5 pb-5 pallete-black">
+    <div class="d-flex justify-content-center pt-5 pb-5" style="background-color: #1B1919">
         <div class="d-flex flex-wrap justify-content-center">
             @php $counter = 0; @endphp
             @foreach ($movies as $key => $movie)
                 @if ($counter < count($movies))
-                    @php
-                        $movieRoute = auth()->check() ? 'details' : 'login';
-                        $routeParams = auth()->check() ? ['id' => $movie->id] : [];
-                    @endphp
-                    <a href="{{ route($movieRoute, $routeParams) }}" class="text-center text-white mx-3 mb-3"
-                        style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
-                        <div style="margin-bottom: 10px;">
-                            <img src="{{ asset('poster/' . $movie->FilmPoster) }}" alt="pos1" class="img-fluid"
-                                style="width:auto; max-height:25rem">
-                            <div class="mt-3">{{ $movie->FilmName }}</div>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <img src="assets/timelogo.png" alt="timelogo">
-                            <div class="ml-2" style="margin-left: 5px;">{{ $movie->FilmDuration }} m</div>
-                            <img style="width: 50px; height:30px" class="ps-2" src="assets/r13.jpg" alt="r13">
-                        </div>
-                    </a>
+                    @if ($counter < 4)
+                        <a href="{{ route('details', ['id' => $movie->id]) }}" class="text-center text-white mx-3 mb-3"
+                            style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
+                            <div style="margin-bottom: 10px;">
+                                <img src="{{ asset('poster/' . $movie->FilmPoster) }}" alt="pos1" class="img-fluid"
+                                    style="width:auto; max-height:25rem">
+                                <div class="mt-3">{{ $movie->FilmName }}</div>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <img src="assets/timelogo.png" alt="timelogo">
+                                <div class="ml-2" style="margin-left: 5px;">{{ $movie->FilmDuration }} m</div>
+                                <img style="width: 50px; height:30px" class="ps-2" src="assets/r13.jpg" alt="r13">
+                            </div>
+                        </a>
+                    @else
+                        <a href="{{ route('details', ['id' => $movie->id]) }}" class="text-center text-white mx-3 mb-3"
+                            style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
+                            <div style="margin-bottom: 10px;">
+                                <img src="{{ asset('poster/' . $movie->FilmPoster) }}" alt="pos1" class="img-fluid"
+                                    style="width:auto; max-height:25rem">
+                                <div class="mt-4">{{ $movie->FilmName }}</div>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <img src="assets/timelogo.png" alt="timelogo">
+                                <div class="ml-2" style="margin-left: 5px;">{{ $movie->FilmDuration }} m</div>
+                                <img style="width: 50px; height:30px" class="ps-2" src="assets/r13.jpg"
+                                    alt="r13">
+                            </div>
+                        </a>
+                    @endif
                     @php $counter++; @endphp
                 @endif
             @endforeach
         </div>
     </div>
+
+
+
+
+
 
     <div class="d-flex justify-content-start align-items-center ps-5 pallete-black nowshowing-button">
         <div class="nowshowingupcoming-bar">
