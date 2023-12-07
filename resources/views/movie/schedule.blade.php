@@ -34,20 +34,20 @@
             <h1 class="schedule__title">Schedule</h1>
 
             <div class="schedule__nav">
-                @foreach ($schedule as $schedule)
+                @foreach ($movie->schedule as $schedule)
                     <div class="schedule-card" id="schedule{{ $schedule->id }}">
                         <div class="schedule-card-body">
                             <h2 class="schedule-card-title">{{ \Carbon\Carbon::parse($schedule->ScheduleDate)->format('d M Y') }}</h2>
-                            <p class="schedule-card-text">{{ \Carbon\Carbon::parse($schedule->ScheduleDate)->format('l') }}</p>
-                        </div>
+                            <p class="`schedule-card-text">{{ \Carbon\Carbon::parse($schedule->ScheduleDate)->format('l') }}</p>
+                        </div>  
                     </div>
                 @endforeach
             </div>
 
             <div class="theater__nav">
-                @for ($i = 0; $i < 11; $i++)
+                @for ($i = 0; $i < 1; $i++)
                     <div class="page" id="page{{ $i }}">
-                        @for ($j = 0; $j < 11; $j++)
+                        @for ($j = 0; $j < sizeof($theater); $j++)
                             <div class="theater">
                                 <div class="theater-body">
                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,7 +59,7 @@
                                 </div>
                                 <p class="theater__address">theater address theater address theater address theater address {{$j}}</p>
                                 <div class="theater-time">
-                                    @for ($k = 0; $k < 10; $k++)
+                                    @for ($k = 0; $k < 1; $k++)
                                         <div class="theater-card" id="theater{{$i}}{{$j}}{{$k}}">
                                             <div class="theater-card-body">
                                                 <h1 class="theater-card-title">{{$k}}:00</h2>

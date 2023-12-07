@@ -99,7 +99,7 @@ body {
 }
 
 .page{
-    display: none;
+    display: block;
     overflow-y: auto;
 }
 

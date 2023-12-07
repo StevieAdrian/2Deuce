@@ -34,6 +34,6 @@ class Films extends Model
 
     public function schedule()
     {
-        return $this->hasMany('App\Models\Schedule');
+        return $this->hasMany('App\Models\Schedule','FilmId');
     }
 }

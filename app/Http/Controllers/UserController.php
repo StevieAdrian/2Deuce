@@ -36,7 +36,7 @@ class UserController extends Controller
     }
 
     public function loginProcess(Request $request){
-
+        
         if($user->role == 'admin'){
             // return redirect()->intended('/')
         } else {
