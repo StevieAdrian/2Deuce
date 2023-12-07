@@ -1,19 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Seats;
 use Illuminate\Http\Request;
+use App\Models\Theaters;
 
 class TheaterSeatController extends Controller
 {
     public function seats()
     {
+        $theaters = Theaters::all();
+      // $filmstatus  =FilmStatus::all();
         // $seats = Seats::all();
         // $taken = Seats::pluck('SeatName')->toArray();
         // return view('seats.theaterSeat', compact('seats'));
         // return view('seats.theaterSeat', compact('taken'));
-        return view('seats.theaterSeat');
+      // dd($theaters);
+        return view('seats.theaterSeat', [
+            "data" => $theaters,
+        ]);
     }
 
     public function saveSeats(Request $request){

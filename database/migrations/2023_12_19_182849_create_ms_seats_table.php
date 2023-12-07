@@ -14,8 +14,11 @@ return new class extends Migration
         Schema::create('ms_seats', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedInteger('theater_id');
+
             $table->string('SeatName')->nullable();
             $table->string('SubTotal');
+            $table->foreign('theater_id')->references('id')->on('ms_theaters');
         });
     }
 

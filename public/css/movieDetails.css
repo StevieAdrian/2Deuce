@@ -5,9 +5,21 @@
 }
 
 .container{
+    max-width: 100%;
     display: flex;
-    margin-left: 5%;
-    margin-top: 5%;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 26px;
+    /* margin-left: 5%;
+    margin-top: 5%; */
+    background-color: none;
+}
+
+.container {
+    max-width: 100%;
+    display: flex;
+
+    font-family: "Poppins", sans-serif;
 }
 
 .desc{
@@ -56,5 +68,5 @@
 
 .proc:hover{
     background-color: #D58936;
-    color:#1B1919
+    /* color:#1B1919 */
 }
