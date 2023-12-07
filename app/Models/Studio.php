@@ -18,7 +18,7 @@ class Studio extends Model
 
     public function theater()
     {
-        return $this->belongsTo('App\Models\Theaters','TheaterId');
+        return $this->belongsTo('App\Models\Theaters','TheaterId','id');
     }
 
     public function schedule()

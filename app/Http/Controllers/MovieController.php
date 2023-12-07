@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Films;
 use App\Models\Movie;
+use App\Models\Schedule;
+use App\Models\Theaters;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -30,8 +32,15 @@ class MovieController extends Controller
         // return view('movie.details', compact('movies'));
     }
 
-    public function schedule()
+    public function schedule($id)
     {
-        return view('movie.schedule');
+        $movies = Films::find($id);
+        $schedule = Schedule::all();
+        $theater = Theaters::all();
+        return view('movie.schedule',[
+            'movie' => $movies,
+            'schedule' => $schedule,
+            'theaters'=>$theater,
+        ]);
     }
 }

@@ -19,7 +19,7 @@ class Theaters extends Model
 
     public function studio()
     {
-        return $this->hasMany('App\Models\Studio');
+        return $this->hasMany('App\Models\Studio','TheaterId','id');
     }
 
 }
