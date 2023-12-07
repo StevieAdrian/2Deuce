@@ -1,5 +1,7 @@
 @extends('templateadmin.app')
 @section('content')
+
+
     <div class="full-black">
         <div class="container">
             <div class="d-flex justify-content-start align-items-center">
@@ -13,25 +15,33 @@
             <div class="container">
                 <div class="d-flex">
                     <div class="flex-fill rounded-start border left-box">
-                        <div class="ps-4 pt-4">
-                            <img src="assets/users1.png" alt="users1">
-                            Users
-                            <hr class="w-80">
-                        </div>
-                        <div class="ps-4 pt-2 orange">
-                            <img src="assets/book.png" alt="book">
-                            Booking
-                            <hr class="w-80">
-                        </div>
-                        <div class="ps-4 pt-2">
-                            <img src="assets/theaters1.png" alt="theaters1">
-                            Theaters
-                            <hr class="w-80">
-                        </div>
-                        <div class="ps-4 pt-2">
-                            <img src="assets/films1.png" alt="films1">
-                            Films
-                        </div>
+                        <a href="./dashboard">
+                            <div class="ps-4 pt-4">
+                                <img src="assets/users1.png" alt="users">
+                                Users
+                                <hr class="w-80">
+                            </div>
+                        </a>
+                        <a href="./dashboardbook">
+                            <div class="ps-4 pt-2 orange">
+                                <img src="assets/book.png" alt="book1">
+                                Booking
+                                <hr class="w-80">
+                            </div>
+                        </a>
+                        <a href="./dashboardtheaters">
+                            <div class="ps-4 pt-2">
+                                <img src="assets/theaters1.png" alt="theaters1">
+                                Theaters
+                                <hr class="w-80">
+                            </div>
+                        </a>
+                        <a href="./dashboardfilms">
+                            <div class="ps-4 pt-2">
+                                <img src="assets/films1.png" alt="films1">
+                                Films
+                            </div>
+                        </a>
                     </div>
 
                     <div class="flex-fill rounded-end border right-box ps-3 pt-3" style="font-size: 36px;">
@@ -46,7 +56,7 @@
                         </div>
 
                         <div class="pt-3 d-flex justify-content-start" style="font-size: 20px">
-                            <div class="table-responsive w-90">
+                            <div class="table-responsive w-90 book_table">
                                 <table class="table table-striped">
                                     <thead>
                                         <hr class="hr-set">
